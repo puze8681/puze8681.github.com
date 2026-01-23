@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://puze8681.github.io/sitemap.xml

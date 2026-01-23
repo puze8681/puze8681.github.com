@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Dark mode (default) */
+:root,
+[data-theme="dark"] {
+  --accent-cyan: #22D3EE;
+  --bg-inset: #0F172A;
+  --bg-primary: #0A0F1C;
+  --bg-surface: #1E293B;
+  --text-muted: #64748B;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-tertiary: #94A3B8;
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --accent-cyan: #0891B2;
+  --bg-inset: #F1F5F9;
+  --bg-primary: #FFFFFF;
+  --bg-surface: #E2E8F0;
+  --text-muted: #94A3B8;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-tertiary: #64748B;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    line-height: 1.6;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .font-sans {
+    font-family: "Inter", sans-serif;
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive container padding */
+@layer utilities {
+  .section-padding {
+    @apply px-5 sm:px-8 md:px-12 lg:px-20;
+  }
+}
