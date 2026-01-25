@@ -94,12 +94,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="h-px w-full bg-[var(--bg-surface)]" />
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
-        <span className="font-mono text-xs md:text-sm text-[var(--text-muted)]">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0 pt-4 md:pt-6">
+        <span className="font-mono text-xs text-[var(--text-muted)]">
           &copy; {currentYear} {name}. {texts.rights}
         </span>
-        <span className="font-mono text-xs md:text-sm text-[var(--text-muted)]">
+        <span className="font-mono text-xs text-[var(--text-muted)]">
           {texts.built}
         </span>
       </div>

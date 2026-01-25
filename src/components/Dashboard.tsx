@@ -26,7 +26,7 @@ const currentWorkData = {
       company: "화이트블록",
       role: "Mobile Developer",
       period: "2021.12 ~ 현재",
-      projects: ["잇츠밀 (POS/KIOSK)", "잇츠미 2.0 (소비 플랫폼)", "윤잇/KLPGA/치지직 외 다수"],
+      projects: ["잇츠밀 (POS/KIOSK)", "잇츠미 2.0 (소비 플랫폼)", "베리어프리 키오스크 (NIA 검증)", "윤잇 외 다수"],
     },
   ],
   en: [
@@ -34,7 +34,7 @@ const currentWorkData = {
       company: "Whiteblock",
       role: "Mobile Developer",
       period: "2021.12 ~ Present",
-      projects: ["ItsMeal (POS/KIOSK)", "ItsMe 2.0 (Consumer Platform)", "Yooneat/KLPGA/Chzzk & more"],
+      projects: ["ItsMeal (POS/KIOSK)", "ItsMe 2.0 (Consumer Platform)", "Barrier-Free Kiosk (NIA Certified)", "Yooneat & more"],
     },
   ],
 };
@@ -50,13 +50,13 @@ const achievementsData = {
   ko: [
     { label: "잇츠밀", value: "2,656 commits", description: "POS/키오스크 앱 개발" },
     { label: "잇츠미", value: "1,317 commits", description: "크로스 플랫폼 앱 개발" },
-    { label: "베리어프리", value: "NIA 검증", description: "접근성 키오스크 단독 개발" },
+    { label: "베리어프리", value: "NIA 검증", description: "접근성 키오스크 전 과정 리드" },
     { label: "레인타운쿠폰", value: "1인 개발", description: "앱 + 관리자 웹 개발" },
   ],
   en: [
     { label: "ItsMeal", value: "2,656 commits", description: "POS/Kiosk app development" },
     { label: "ItsMe", value: "1,317 commits", description: "Cross-platform app" },
-    { label: "Barrier-Free", value: "NIA Certified", description: "Accessible kiosk (solo dev)" },
+    { label: "Barrier-Free", value: "NIA Certified", description: "Accessible kiosk (led entire process)" },
     { label: "RaintownCoupon", value: "Solo dev", description: "App + Admin web" },
   ],
 };

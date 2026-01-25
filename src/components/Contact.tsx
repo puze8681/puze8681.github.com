@@ -27,14 +27,14 @@ export default function Contact() {
   const texts = sectionTexts[language];
 
   return (
-    <section id="contact" className="flex flex-col items-center gap-8 md:gap-12 section-padding py-12 md:py-20 w-full bg-[var(--bg-surface)]">
-      <span className="text-xs font-semibold tracking-widest text-[var(--accent-cyan)]">
+    <section id="contact" className="flex flex-col items-center gap-8 md:gap-12 section-padding py-12 md:py-20 w-full bg-[var(--bg-inset)]">
+      <span className="text-xs font-semibold tracking-widest text-[var(--text-tertiary)]">
         {texts.label}
       </span>
       <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] text-center">
         {texts.title}
       </h2>
-      <p className="text-base md:text-lg text-[var(--text-secondary)] text-center leading-relaxed max-w-xl">
+      <p className="text-base md:text-lg text-[var(--text-tertiary)] text-center leading-relaxed max-w-xl">
         {texts.description1}<br />
         {texts.description2}
       </p>
@@ -49,7 +49,7 @@ export default function Contact() {
         </a>
         <a
           href="tel:010-9790-8310"
-          className="flex items-center justify-center gap-2 md:gap-3 w-full px-6 md:px-8 py-3 md:py-4 rounded-lg border border-[var(--text-tertiary)] font-mono text-sm md:text-lg text-[var(--text-primary)] hover:border-[var(--accent-cyan)] transition-colors"
+          className="flex items-center justify-center gap-2 md:gap-3 w-full px-6 md:px-8 py-3 md:py-4 rounded-lg border border-[var(--text-muted)] font-mono text-sm md:text-lg text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-colors"
         >
           <Phone className="w-4 h-4 md:w-5 md:h-5" />
           010-9790-8310
@@ -63,13 +63,16 @@ export default function Contact() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[var(--bg-inset)] text-[var(--text-secondary)] hover:text-[var(--accent-cyan)] transition-colors"
+            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[var(--bg-surface)] text-[var(--text-tertiary)] hover:text-[var(--accent-cyan)] transition-colors"
             aria-label={link.label}
           >
             <link.icon className="w-5 h-5 md:w-6 md:h-6" />
           </a>
         ))}
       </div>
+
+      {/* 푸터와의 구분선 */}
+      <div className="w-full h-px bg-[var(--bg-surface)] mt-4" />
     </section>
   );
 }
