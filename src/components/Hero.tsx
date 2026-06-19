@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import ResumeDownloadButton from "./resume/DownloadButton";
+import PortfolioDownloadButton from "./resume/PortfolioDownloadButton";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -62,6 +63,10 @@ export default function Hero() {
             {t("hero.cta.contact")}
           </a>
           <ResumeDownloadButton
+            variant="secondary"
+            className="px-8 py-4 font-mono text-sm md:text-base"
+          />
+          <PortfolioDownloadButton
             variant="secondary"
             className="px-8 py-4 font-mono text-sm md:text-base"
           />

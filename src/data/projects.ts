@@ -341,9 +341,9 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       slug: "itsmeal",
       tag: "Flutter",
       title: "잇츠밀 - It's Meal",
-      period: "2022.02 ~ 현재",
+      period: "2022.02 ~ 2026.02",
       description:
-        "식음료/유통 매장의 POS, 키오스크, 식권 리더기 통합 솔루션. 4년간 2,656 commits으로 지속적인 기능 개발과 유지보수를 담당하고 있습니다.",
+        "식음료/유통 매장의 POS, 키오스크, 식권 리더기 통합 솔루션. 4년간 2,656 commits으로 지속적인 기능 개발과 유지보수를 담당했습니다.",
       tech: ["Flutter", "Dart", "Sentry", "GitHub Actions", "Slack"],
       links: [],
       stats: { commits: "2,656", years: "4년", features: "키오스크/POS/리더기" },
@@ -355,7 +355,7 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       slug: "itsme",
       tag: "Flutter",
       title: "잇츠미 - It'sMe 2.0",
-      period: "2021.12 ~ 현재",
+      period: "2021.12 ~ 2026.02",
       description:
         "종합소비플랫폼의 Flutter 기반 크로스 플랫폼 서비스. 4년간 1,317 commits으로 결제/장바구니 시스템 전면 개선, iOS/Android CI/CD 구축을 담당했습니다.",
       tech: ["Flutter", "Dart", "Fastlane", "Firebase", "BLoC"],
@@ -374,9 +374,9 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       slug: "itsmeal",
       tag: "Flutter",
       title: "ItsMeal - It's Meal",
-      period: "2022.02 ~ Present",
+      period: "2022.02 ~ 2026.02",
       description:
-        "Integrated POS, kiosk, and meal ticket reader solution for F&B/retail stores. Responsible for continuous feature development and maintenance with 2,656 commits over 4 years.",
+        "Integrated POS, kiosk, and meal ticket reader solution for F&B/retail stores. Led continuous feature development and maintenance with 2,656 commits over 4 years.",
       tech: ["Flutter", "Dart", "Sentry", "GitHub Actions", "Slack"],
       links: [],
       stats: { commits: "2,656", years: "4 yrs", features: "Kiosk/POS/Reader" },
@@ -388,7 +388,7 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       slug: "itsme",
       tag: "Flutter",
       title: "ItsMe - It'sMe 2.0",
-      period: "2021.12 ~ Present",
+      period: "2021.12 ~ 2026.02",
       description:
         "Flutter-based cross-platform service for consumer platform. Led payment/cart system overhaul and iOS/Android CI/CD setup with 1,317 commits over 4 years.",
       tech: ["Flutter", "Dart", "Fastlane", "Firebase", "BLoC"],

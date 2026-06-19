@@ -25,7 +25,7 @@ const currentWorkData = {
     {
       company: "화이트블록",
       role: "Mobile Developer",
-      period: "2021.12 ~ 현재",
+      period: "2021.12 ~ 2026.02",
       projects: ["잇츠밀 (POS/KIOSK)", "잇츠미 2.0 (소비 플랫폼)", "베리어프리 키오스크 (NIA 검증)", "윤잇 외 다수"],
     },
   ],
@@ -33,7 +33,7 @@ const currentWorkData = {
     {
       company: "Whiteblock",
       role: "Mobile Developer",
-      period: "2021.12 ~ Present",
+      period: "2021.12 ~ 2026.02",
       projects: ["ItsMeal (POS/KIOSK)", "ItsMe 2.0 (Consumer Platform)", "Barrier-Free Kiosk (NIA Certified)", "Yooneat & more"],
     },
   ],
@@ -112,12 +112,12 @@ export default function Dashboard() {
 
       {/* 하단 상세 정보 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-        {/* 현재 근무 */}
+        {/* 최근 경력 */}
         <div className="flex flex-col gap-4 p-5 md:p-6 rounded-xl bg-[var(--bg-inset)]">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[var(--accent-cyan)]" />
             <span className="text-xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
-              Currently Working
+              {language === "ko" ? "최근 경력" : "Latest Experience"}
             </span>
           </div>
           {currentWork.map((work) => (

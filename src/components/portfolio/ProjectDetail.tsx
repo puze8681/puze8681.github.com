@@ -1,16 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, GitCommit, ExternalLink, Calendar } from "lucide-react";
+import { ArrowLeft, GitCommit, ExternalLink, Calendar, BookOpen } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Project, MajorProject, ProjectHighlight } from "@/data/types";
 import ImageGallery from "./ImageGallery";
 import StoreBadges from "../StoreBadges";
+import RetrospectiveModal from "../RetrospectiveModal";
 import {
   itsmealDesignImages,
   itsmeDesignImages,
   itsmealHighlightsData,
   itsmeHighlightsData,
+  getRetrospective,
+  retrospectiveTexts,
 } from "@/data";
 
 interface ProjectDetailProps {
@@ -43,6 +47,11 @@ const sectionTexts = {
 export default function ProjectDetail({ project }: ProjectDetailProps) {
   const { language } = useLanguage();
   const texts = sectionTexts[language];
+  const retroTexts = retrospectiveTexts[language];
+  const [isRetroModalOpen, setIsRetroModalOpen] = useState(false);
+
+  // 회고 데이터 가져오기
+  const retrospective = getRetrospective(project.slug, language);
 
   // 이미지 통합
   const allImages = [
@@ -103,13 +112,24 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           {project.title}
         </h1>
 
-        <div className="flex items-center gap-2 text-[var(--text-muted)]">
-          <Calendar className="w-4 h-4" />
-          <span className="font-mono text-sm">{project.period}</span>
-          {(project as MajorProject).stats?.years && (
-            <span className="text-sm">
-              ({(project as MajorProject).stats.years})
-            </span>
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="flex items-center gap-2 text-[var(--text-muted)]">
+            <Calendar className="w-4 h-4" />
+            <span className="font-mono text-sm">{project.period}</span>
+            {(project as MajorProject).stats?.years && (
+              <span className="text-sm">
+                ({(project as MajorProject).stats.years})
+              </span>
+            )}
+          </div>
+          {retrospective && (
+            <button
+              onClick={() => setIsRetroModalOpen(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent-cyan)]/10 text-[var(--accent-cyan)] hover:bg-[var(--accent-cyan)]/20 transition-colors"
+            >
+              <BookOpen className="w-4 h-4" />
+              <span className="text-sm font-semibold">{retroTexts.button}</span>
+            </button>
           )}
         </div>
       </header>
@@ -245,6 +265,17 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
             ))}
           </div>
         </section>
+      )}
+
+      {/* 회고 모달 */}
+      {retrospective && (
+        <RetrospectiveModal
+          retrospective={retrospective}
+          projectTitle={project.title}
+          language={language}
+          isOpen={isRetroModalOpen}
+          onClose={() => setIsRetroModalOpen(false)}
+        />
       )}
     </article>
   );

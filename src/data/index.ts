@@ -36,3 +36,12 @@ export {
   statsData,
   aboutSectionTexts,
 } from "./education";
+
+// Retrospectives
+export {
+  retrospectivesData,
+  barrierFreeRetrospective,
+  retrospectiveTexts,
+  getRetrospective,
+} from "./retrospectives";
+export type { Retrospective } from "./retrospectives";

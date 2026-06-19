@@ -5,7 +5,7 @@ export const experiencesData: LocalizedData<Experience[]> = {
     {
       company: "화이트블록",
       role: "서비스 개발팀 / Developer",
-      period: "2021.12 - 현재 재직중",
+      period: "2021.12 - 2026.02",
       projects: [
         {
           name: "잇츠밀 - It's Meal",
@@ -109,7 +109,7 @@ export const experiencesData: LocalizedData<Experience[]> = {
     {
       company: "Whiteblock",
       role: "Service Dev Team / Developer",
-      period: "2021.12 - Present",
+      period: "2021.12 - 2026.02",
       projects: [
         {
           name: "ItsMeal - It's Meal",

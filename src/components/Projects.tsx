@@ -1,11 +1,12 @@
 "use client";
 
-import { ExternalLink, GitCommit, Award, CheckCircle, Smartphone, Monitor, TabletSmartphone, FileText, X, ArrowRight } from "lucide-react";
+import { ExternalLink, GitCommit, Award, CheckCircle, Smartphone, Monitor, TabletSmartphone, FileText, X, ArrowRight, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useCallback } from "react";
 import StoreBadges from "./StoreBadges";
 import ImageModal from "./ImageModal";
+import RetrospectiveModal from "./RetrospectiveModal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   majorProjectsData,
@@ -17,6 +18,8 @@ import {
   itsmealHighlightsData,
   itsmeHighlightsData,
   projectSectionTexts,
+  barrierFreeRetrospective,
+  retrospectiveTexts,
 } from "@/data";
 
 export default function Projects() {
@@ -25,6 +28,7 @@ export default function Projects() {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState<{ src: string; alt: string }[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isBarrierFreeRetroOpen, setIsBarrierFreeRetroOpen] = useState(false);
   const { language } = useLanguage();
 
   const openImageModal = useCallback((images: { src: string; alt: string }[], index: number) => {
@@ -284,7 +288,7 @@ export default function Projects() {
           {barrierFreeProject.description}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-wrap">
           <a
             href={barrierFreeLinks.landing}
             target="_blank"
@@ -300,6 +304,13 @@ export default function Projects() {
           >
             <FileText className="w-4 h-4 text-[var(--text-secondary)]" />
             <span className="text-sm font-semibold text-[var(--text-primary)]">{texts.userManual}</span>
+          </button>
+          <button
+            onClick={() => setIsBarrierFreeRetroOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--bg-inset)] hover:bg-[var(--bg-primary)] transition-colors"
+          >
+            <BookOpen className="w-4 h-4 text-[var(--accent-cyan)]" />
+            <span className="text-sm font-semibold text-[var(--accent-cyan)]">{retrospectiveTexts[language].button}</span>
           </button>
         </div>
 
@@ -527,6 +538,15 @@ export default function Projects() {
       onClose={closeImageModal}
       onPrev={goToPrevImage}
       onNext={goToNextImage}
+    />
+
+    {/* 베리어프리 회고 모달 */}
+    <RetrospectiveModal
+      retrospective={barrierFreeRetrospective[language]}
+      projectTitle={barrierFreeProject.title}
+      language={language}
+      isOpen={isBarrierFreeRetroOpen}
+      onClose={() => setIsBarrierFreeRetroOpen(false)}
     />
     </>
   );
