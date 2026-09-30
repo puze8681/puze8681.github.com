@@ -5,16 +5,16 @@ export const experiencesData: LocalizedData<Experience[]> = {
     {
       company: "하이퍼노바",
       role: "Product Engineer",
-      period: "2026.07 - 현재",
+      period: "2026.07 - 2026.09",
       projects: [
         {
           name: "헤이링(Heyring) AI",
-          period: "2026.07 ~",
-          description: "예약된 시간에 AI 튜터와 통화하고 맞춤형 피드백을 받는 AI 전화영어 서비스",
+          period: "2026.07 - 2026.09",
+          description: "예약된 시간에 AI 튜터와 통화하고 맞춤형 피드백을 받는 AI 전화 기반 언어 학습 서비스",
           tasks: [
             "입사 직후 모바일 CI/CD를 구축·개선해 빌드 시간을 21분대에서 6분대로 약 71% 단축",
             "영어 전용 학습 경험을 일본어까지 확장하고, 단어·표현을 드래그해 저장·학습하는 기능 개발",
-            "예약 전화 처리의 병목을 분석하고 스케줄러·디스패처·큐·발송 워커로 역할을 분리한 인프라 개선 설계",
+            "예약 통화 처리의 병목을 분석하고 스케줄러·디스패처·큐·통화 실행 워커로 역할을 분리한 인프라 개선 설계",
             "Flutter 앱부터 백엔드·인프라까지 제품 요구사항을 통합 구현",
           ],
         },
@@ -26,13 +26,13 @@ export const experiencesData: LocalizedData<Experience[]> = {
       period: "2021.12 - 2026.02",
       projects: [
         {
-          name: "잇츠미 - It'sMe 종합소비플랫폼 2.0",
+          name: "잇츠미 - It'sMe 대학 생활 통합 서비스 2.0",
           period: "2021.12 - 2026.02",
-          description: "서비스와 고객사가 없던 단계에서 시작해 첫 대학 고객 계약으로 연결한 종합소비플랫폼",
+          description: "서비스와 고객사가 없던 단계에서 시작해 첫 대학 고객 도입으로 이어진 대학 생활 통합 서비스",
           tasks: [
             "입사 직후 2개월간 Flutter 기반 앱을 개발해 첫 버전을 출시",
             "출시와 함께 한국외국어대학교를 첫 고객사로 확보하는 제품 기반 마련",
-            "퇴사 시점 13개 대학으로 확장되며 전체 사용자 11만 명 이상·MAU 6만 명 이상 규모로 성장 (2026.02 보수 추정)",
+            "퇴사 시점(2026.02) 13개 대학으로 확장, 도입 대학 증가분을 반영한 추정치 기준 전체 사용자 11만 명 이상·MAU 6만 명 이상",
             "EPAY 결제를 포함한 멤버십·포인트·쿠폰·결제 기능 개발",
             "외부 투자 없이 사업을 이어온 회사가 흑자 전환하는 과정에서 핵심 제품 개발·운영을 담당",
           ],
@@ -128,17 +128,17 @@ export const experiencesData: LocalizedData<Experience[]> = {
     {
       company: "Hypernova",
       role: "Product Engineer",
-      period: "2026.07 - Present",
+      period: "2026.07 - 2026.09",
       projects: [
         {
           name: "Heyring AI",
-          period: "2026.07 ~",
-          description: "AI phone-English service with scheduled tutor calls and personalized feedback",
+          period: "2026.07 - 2026.09",
+          description: "AI phone-based language-learning service with scheduled tutor calls and personalized feedback",
           tasks: [
             "Introduced and optimized mobile CI/CD immediately after joining, reducing build time from 21 minutes to 6 minutes (about 71%)",
             "Expanded the English-only experience to Japanese and built drag-to-save learning for words and expressions",
-            "Designed a scheduled-call architecture separating the scheduler, dispatcher, queue, and delivery workers to remove bottlenecks",
-            "Delivering product requirements across Flutter, backend, and infrastructure",
+            "Designed a scheduled-call architecture separating the scheduler, dispatcher, queue, and call-execution workers to remove bottlenecks",
+            "Delivered product requirements across Flutter, backend, and infrastructure",
           ],
         },
       ],
@@ -149,13 +149,13 @@ export const experiencesData: LocalizedData<Experience[]> = {
       period: "2021.12 - 2026.02",
       projects: [
         {
-          name: "ItsMe - Consumer Platform 2.0",
+          name: "ItsMe - Campus Life Platform 2.0",
           period: "2021.12 - 2026.02",
-          description: "A zero-to-one consumer platform that led from no service or customers to the first university contract",
+          description: "A zero-to-one campus-life platform that grew from no service or customers to its first university customer",
           tasks: [
             "Built and launched the first Flutter app within two months of joining",
             "Established the product foundation that secured HUFS as the first customer",
-            "Expanded to 13 universities, with 110K+ total users and 60K+ MAU at departure (conservative Feb 2026 estimate)",
+            "Expanded to 13 universities; estimates adjusted for that university growth indicate 110K+ total users and 60K+ MAU at departure (Feb 2026)",
             "Built membership, points, coupons, and EPAY-integrated payments",
             "Owned core product development and operations through the company's bootstrapped path to profitability",
           ],

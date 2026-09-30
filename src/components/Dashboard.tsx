@@ -39,9 +39,9 @@ const overviewData = {
     works: [
       {
         index: "01",
-        category: "현재 제품 · Product Engineering",
+        category: "회사 프로젝트 · Product Engineering",
         title: "헤이링(Heyring) AI",
-        summary: "모바일 제품 개선부터 학습 기능 출시, 배포 파이프라인과 예약 전화 인프라 설계까지 연결합니다.",
+        summary: "모바일 제품 개선부터 학습 기능 출시, 배포 파이프라인과 예약 통화 처리 인프라 설계까지 연결했습니다.",
         outcome: "모바일 빌드 21분대 → 6분대 · 약 71% 단축",
         action: "사례 자세히 보기",
         href: "/portfolio/heyring-ai",
@@ -51,7 +51,7 @@ const overviewData = {
         category: "장기 제품 · 0→1 & Scale",
         title: "잇츠미 · 잇츠밀",
         summary: "서비스와 고객이 없던 단계에서 두 제품을 구축하고 첫 고객 확보부터 다수 대학의 장기 운영까지 기여했습니다.",
-        outcome: "첫 고객 → 13개 대학 · 외부 투자 없이 흑자 전환 기여",
+        outcome: "첫 고객 → 13개 대학 · 흑자 전환 시점까지 핵심 제품 개발·운영",
         action: "관련 프로젝트 보기",
         href: "#whiteblock-products",
       },
@@ -100,9 +100,9 @@ const overviewData = {
     works: [
       {
         index: "01",
-        category: "Current Product · Product Engineering",
+        category: "Company Project · Product Engineering",
         title: "Heyring AI",
-        summary: "Connecting mobile product improvements, learning features, delivery pipelines, and scheduled-call infrastructure design.",
+        summary: "Connected mobile product improvements, learning features, delivery pipelines, and scheduled-call infrastructure redesign.",
         outcome: "Mobile build time: 21 min → 6 min · about 71% faster",
         action: "View case study",
         href: "/portfolio/heyring-ai",
@@ -112,7 +112,7 @@ const overviewData = {
         category: "Long-Term Product · 0→1 & Scale",
         title: "ItsMe · ItsMeal",
         summary: "Built both products before the company had a live service or customer, then helped scale them into long-term university operations.",
-        outcome: "First customer → 13 universities · contributed to profitability without outside funding",
+        outcome: "First customer → 13 universities · core product ownership through profitability",
         action: "View related projects",
         href: "#whiteblock-products",
       },

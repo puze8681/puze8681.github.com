@@ -357,7 +357,7 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       title: "잇츠미 - It'sMe 2.0",
       period: "2021.12 ~ 2026.02",
       description:
-        "고객사와 매출, 운영 서비스가 없던 단계에서 입사 직후 2개월간 Flutter 앱을 개발해 출시했습니다. 한국외국어대학교 첫 계약에서 13개 대학으로 확장됐으며, 퇴사 시점 전체 사용자 11만 명 이상·MAU 6만 명 이상 규모로 보수 추정됩니다. 외부 투자 없이 사업을 이어온 회사가 흑자 전환하는 과정에서 핵심 제품 개발·운영을 담당했습니다.",
+        "고객사와 매출, 운영 서비스가 없던 단계에서 입사 직후 2개월간 Flutter 앱을 개발해 출시했습니다. 한국외국어대학교의 첫 고객 도입에서 13개 대학으로 확장됐으며, 도입 대학 증가분을 반영한 퇴사 시점 추정치는 전체 사용자 11만 명 이상·MAU 6만 명 이상입니다. 외부 투자 없이 사업을 이어온 회사가 흑자 전환하는 시점까지 핵심 제품 개발·운영을 담당했습니다.",
       tech: ["Flutter", "Dart", "Fastlane", "Firebase", "BLoC"],
       links: [
         { label: "Play Store", url: "https://play.google.com/store/apps/details?id=id.itsme.mobile" },
@@ -390,7 +390,7 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       title: "ItsMe - It'sMe 2.0",
       period: "2021.12 ~ 2026.02",
       description:
-        "Built and launched the Flutter app within two months when the company had no customers, revenue, or live service. It expanded from HUFS to 13 universities and an estimated 110K+ total users and 60K+ MAU by departure. I owned core product development and operations as the bootstrapped company reached profitability without external investment.",
+        "Built and launched the Flutter app within two months when the company had no customers, revenue, or live service. It expanded from HUFS to 13 universities; estimates adjusted for that university growth indicate 110K+ total users and 60K+ MAU by departure. I owned core product development and operations through the point when the bootstrapped company reached profitability.",
       tech: ["Flutter", "Dart", "Fastlane", "Firebase", "BLoC"],
       links: [
         { label: "Play Store", url: "https://play.google.com/store/apps/details?id=id.itsme.mobile" },
@@ -411,9 +411,9 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       slug: "heyring-ai",
       tag: "Product Engineering",
       title: "헤이링(Heyring) AI",
-      period: "2026.07 - 현재",
+      period: "2026.07 - 2026.09",
       description:
-        "하이퍼노바의 AI 언어 학습 서비스입니다. Product Engineer로 합류한 직후 모바일 CI/CD를 적용해 빌드 시간을 21분대에서 6분대로 약 71% 단축했고, 일본어 학습과 단어·표현 저장 기능을 출시했습니다. 예약 전화 처리의 병목을 줄이기 위한 인프라 개선도 설계했습니다.",
+        "하이퍼노바의 AI 언어 학습 서비스입니다. Product Engineer로 합류한 직후 모바일 CI/CD를 적용해 빌드 시간을 21분대에서 6분대로 약 71% 단축했고, 일본어 학습과 단어·표현 저장 기능을 출시했습니다. 예약 통화 처리의 병목을 줄이기 위한 인프라 개선도 설계했습니다.",
       tech: ["Flutter", "Dart", "CI/CD", "Queue", "Infrastructure", "Product Engineering"],
       links: [
         { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hypernovacorp.navatar_android" },
@@ -423,7 +423,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
         "모바일 CI/CD 적용 및 최적화: 빌드 21분대 → 6분대 (약 71% 단축)",
         "영어 전용 서비스에 일본어 학습 지원 추가",
         "단어·표현을 드래그해 저장하고 반복 학습하는 기능 개발",
-        "1분 주기 스케줄러·판단/디스패처·큐·발송 워커로 예약 전화 처리 역할 분리 설계",
+        "1분 주기 스케줄러·판단/디스패처·큐·통화 실행 워커로 예약 통화 처리 역할 분리 설계",
         "Flutter 앱부터 백엔드·인프라까지 연결한 Product Engineering",
       ],
     },
@@ -758,9 +758,9 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       slug: "heyring-ai",
       tag: "Product Engineering",
       title: "Heyring AI",
-      period: "2026.07 - Present",
+      period: "2026.07 - 2026.09",
       description:
-        "Hypernova's AI language-learning service. Immediately after joining as a Product Engineer, I introduced mobile CI/CD and cut build time from 21 minutes to 6 minutes (about 71%), shipped Japanese learning and drag-to-save vocabulary features, and designed infrastructure improvements for scheduled calls.",
+        "Hypernova's AI language-learning service. Immediately after joining as a Product Engineer, I introduced mobile CI/CD and cut build time from 21 minutes to 6 minutes (about 71%), shipped Japanese learning and drag-to-save vocabulary features, and redesigned the scheduled-call infrastructure.",
       tech: ["Flutter", "Dart", "CI/CD", "Queue", "Infrastructure", "Product Engineering"],
       links: [
         { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hypernovacorp.navatar_android" },
@@ -770,7 +770,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
         "Introduced and optimized mobile CI/CD: build time from 21 to 6 minutes (about 71% faster)",
         "Expanded the English-only experience to Japanese learning",
         "Built drag-to-save and study flows for words and expressions",
-        "Designed scheduler, decision/dispatcher, queue, and delivery-worker separation for scheduled calls",
+        "Separated scheduler, decision/dispatcher, queue, and call-execution worker responsibilities for scheduled calls",
         "Product engineering across Flutter, backend, and infrastructure",
       ],
     },
