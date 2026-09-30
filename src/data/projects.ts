@@ -471,14 +471,14 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       title: "PintaAI 내부 운영 AX",
       period: "2026.07 - 현재",
       description:
-        "AI 에이전트와 MCP의 실행을 관찰·통제하는 미국 법인 보안 기업 PintaAI의 내부 재무·운영 프로세스를 AX로 전환하는 프로젝트입니다. 반복 업무를 자동화하고 실제 운영 환경에 이관했습니다.",
+        "AI 에이전트와 MCP의 실행을 관찰·통제하는 미국 법인 보안 기업 PintaAI의 내부 운영 프로세스를 AX로 전환하는 프로젝트입니다. 반복 업무의 자동화 설계·구축과 일부 운영 워크플로우 이관을 진행하고 있습니다.",
       tech: ["TypeScript", "Node.js", "PostgreSQL", "Playwright", "GCP", "LLM"],
       links: [{ label: "Website", url: "https://pinta.sh/" }],
       features: [
-        "부가세 증빙 수집·분류·회신 워크플로우 자동화",
-        "지원사업 서류 생성·검증 프로세스 구축",
-        "영업·투자 CRM 및 운영 리더보드 자동화",
+        "재무·영업·운영 반복 업무의 자동화 설계·구축",
+        "문서 생성·검증과 데이터 관리 워크플로우 개선",
         "로컬 업무 도구의 클라우드 운영 환경 전환",
+        "일부 자동화 흐름을 실제 운영 환경에 단계적으로 이관",
       ],
     },
     {
@@ -486,7 +486,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       slug: "yunit",
       tag: "Flutter",
       title: "윤잇 - Yunit 브랜드 앱",
-      period: "2025.07 - 2025.11",
+      period: "2025.08 - 2025.11",
       description:
         "윤잇 브랜드의 공식 모바일 앱입니다. PG 결제 연동, 구독 정기결제 시스템, 쿠폰 관리, 푸시 알림 설정 등 전체 커머스 기능을 개발했습니다.",
       tech: ["Flutter", "Dart", "PG결제", "FCM", "구독결제"],
@@ -512,7 +512,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       tech: ["Flutter", "Dart", "Kiosk", "결제연동"],
       links: [],
       commits: "16",
-      features: ["1차: 수원CC (2024.05.09~05.12)", "2차: 포천힐스CC (2024.08.20~08.24)"],
+      features: ["사전 협의된 KLPGA 4개 대회 현장 운영", "티켓 선택·재고 연동·결제·발권 플로우 개발"],
       images: [
         { src: "/images/klpga/klpga1.png", alt: "KLPGA Kiosk 1" },
         { src: "/images/klpga/klpga2.png", alt: "KLPGA Kiosk 2" },
@@ -655,7 +655,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       slug: "okit",
       tag: "Android",
       title: "OKIT - 옷깃만 스쳐도 인연",
-      period: "2019.12 - 2020.09",
+      period: "2019.12 - 2020.08",
       description:
         "Loplat SDK를 사용하여 방문한 장소를 기록하는 '라이프로깅' 서비스입니다. 같은 장소를 방문한 사용자를 매칭해주며 해당 장소에 대한 기록을 공유할 수 있습니다.",
       tech: ["Kotlin", "Firebase", "Google Maps", "Loplat SDK"],
@@ -818,14 +818,14 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       title: "PintaAI Internal Operations AX",
       period: "2026.07 - Present",
       description:
-        "An internal AX initiative for PintaAI, a U.S.-incorporated security company that observes and controls AI agent and MCP execution. Automated recurring finance and operations workflows and transitioned them into production use.",
+        "An internal AX initiative for PintaAI, a U.S.-incorporated security company that observes and controls AI agent and MCP execution. Designing and building automation for recurring operations while gradually moving selected workflows into production.",
       tech: ["TypeScript", "Node.js", "PostgreSQL", "Playwright", "GCP", "LLM"],
       links: [{ label: "Website", url: "https://pinta.sh/" }],
       features: [
-        "VAT evidence collection, classification, and response automation",
-        "Grant document generation and validation workflow",
-        "Sales and investor CRM and operations leaderboard automation",
+        "Automation design and implementation for recurring finance, sales, and operations work",
+        "Document generation, validation, and data-management workflow improvements",
         "Migration from local workflow tools to a cloud operating environment",
+        "Gradual production rollout of selected automation workflows",
       ],
     },
     {
@@ -833,7 +833,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       slug: "yunit",
       tag: "Flutter",
       title: "Yooneat - Yunit Brand App",
-      period: "2025.07 - 2025.11",
+      period: "2025.08 - 2025.11",
       description:
         "Official mobile app for Yooneat brand. Developed full commerce features including PG payment integration, subscription billing system, coupon management, and push notification settings.",
       tech: ["Flutter", "Dart", "PG Payment", "FCM", "Subscription"],
@@ -859,7 +859,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       tech: ["Flutter", "Dart", "Kiosk", "Payment Integration"],
       links: [],
       commits: "16",
-      features: ["1st: Suwon CC (2024.05.09~05.12)", "2nd: Pocheon Hills CC (2024.08.20~08.24)"],
+      features: ["On-site operation for four pre-agreed KLPGA tournaments", "Ticket selection, inventory sync, payment, and issuing flow"],
       images: [
         { src: "/images/klpga/klpga1.png", alt: "KLPGA Kiosk 1" },
         { src: "/images/klpga/klpga2.png", alt: "KLPGA Kiosk 2" },
@@ -1002,7 +1002,7 @@ export const otherProjectsData: LocalizedData<Project[]> = {
       slug: "okit",
       tag: "Android",
       title: "OKIT - Life Logging Service",
-      period: "2019.12 - 2020.09",
+      period: "2019.12 - 2020.08",
       description:
         "Life logging service using Loplat SDK to record visited places. Matches users who visited the same locations and allows sharing records about those places.",
       tech: ["Kotlin", "Firebase", "Google Maps", "Loplat SDK"],
@@ -1136,8 +1136,8 @@ export const projectSectionTexts: LocalizedData<{
 }> = {
   ko: {
     label: "Projects",
-    title: "주요 프로젝트",
-    description: "모바일 제품부터 AI/AX·인프라까지 직접 설계하고 구현한 프로젝트",
+    title: "전체 프로젝트",
+    description: "대표 작업 외에도 제품 개발의 범위와 깊이를 보여주는 회사·외부 프로젝트",
     otherProjects: "기타 프로젝트",
     productDesign: "제품 디자인",
     appDesign: "앱 디자인",
@@ -1155,8 +1155,8 @@ export const projectSectionTexts: LocalizedData<{
   },
   en: {
     label: "Projects",
-    title: "Key Projects",
-    description: "Products I designed and built across mobile, AI/AX, and infrastructure",
+    title: "All Projects",
+    description: "Company and external projects that show the range and depth of my product work beyond the selected cases above",
     otherProjects: "Other Projects",
     productDesign: "Product Design",
     appDesign: "App Design",

@@ -92,7 +92,7 @@ export default function Projects() {
       </div>
 
       {/* 주요 프로젝트 */}
-      <div className="flex flex-col gap-8">
+      <div id="whiteblock-products" className="scroll-mt-20 flex flex-col gap-8">
         {majorProjects.map((project) => (
           <div
             key={project.id}

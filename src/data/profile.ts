@@ -6,8 +6,8 @@ export const profile: Profile = {
     en: "Taejun Park",
   },
   title: {
-    ko: "Product Engineer · Mobile & AI",
-    en: "Product Engineer · Mobile & AI",
+    ko: "Product Engineer · Mobile Systems · AI/AX",
+    en: "Product Engineer · Mobile Systems · AI/AX",
   },
   email: "puze8681@gmail.com",
   phone: "010-9790-8310",
@@ -15,8 +15,8 @@ export const profile: Profile = {
   linkedin: "https://linkedin.com/in/puze8681",
   portfolio: "https://puze8681.github.io",
   summary: {
-    ko: "7년간 20개 이상의 프로젝트를 수행하며 모바일 앱, 웹, 백엔드, AI/AX, 인프라까지 제품 전반을 개발했습니다. 현재 하이퍼노바에서 헤이링(Heyring) AI의 Flutter 앱과 인프라를 설계·개발하고 있습니다.",
-    en: "With 7 years of experience across 20+ projects, I build products spanning mobile apps, web, backend, AI/AX, and infrastructure. I currently design and develop the Flutter app and infrastructure for Heyring AI at Hypernova.",
+    ko: "모바일 제품을 중심으로 사용자 경험, 백엔드, 배포·운영, 현장 장비와 AI 워크플로를 연결하는 7년차 Product Engineer입니다. 요구사항이 불명확한 0→1 단계부터 출시, 고객 도입과 장기 운영까지 책임져 왔습니다. 현재 하이퍼노바에서 헤이링(Heyring) AI의 Flutter 앱과 학습 기능을 개발하고 예약 전화 인프라 개선을 설계하고 있습니다.",
+    en: "A Product Engineer with 7 years of experience connecting mobile products with backend systems, delivery, field hardware, and AI workflows. I take ambiguous problems from zero-to-one definition through launch, customer adoption, and long-term operations. At Hypernova, I build Heyring AI's Flutter app and learning experience and design improvements to its scheduled-call infrastructure.",
   },
 };
 

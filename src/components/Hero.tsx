@@ -9,7 +9,7 @@ import PortfolioDownloadButton from "./resume/PortfolioDownloadButton";
 import ImpactCareerDownloadButton from "./resume/ImpactCareerDownloadButton";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { theme } = useTheme();
 
   // Dark mode default: profile1, Light mode default: profile2
@@ -54,28 +54,29 @@ export default function Hero() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-2 max-w-2xl">
           <a
-            href="#projects"
+            href="#selected-work"
             className="flex items-center justify-center px-8 py-3.5 md:py-4 rounded-lg bg-[var(--accent-cyan)] font-mono text-sm md:text-base font-semibold text-[var(--bg-primary)] hover:opacity-90 transition-opacity text-center"
           >
             {t("hero.cta.projects")} &rarr;
           </a>
-          <a
-            href="#contact"
-            className="flex items-center justify-center px-8 py-3.5 md:py-4 rounded-lg border border-[var(--text-tertiary)] font-mono text-sm md:text-base font-semibold text-[var(--text-primary)] hover:border-[var(--accent-cyan)] transition-colors text-center"
-          >
-            {t("hero.cta.contact")}
-          </a>
+          <ImpactCareerDownloadButton className="justify-center px-8 py-3.5 md:py-4 font-mono text-sm md:text-base" />
         </div>
-        <div className="grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+        <div
+          className="flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-2 px-1"
+          role="group"
+          aria-label={language === "ko" ? "문서 다운로드 및 연락" : "Document downloads and contact"}
+        >
           <ResumeDownloadButton
             variant="secondary"
-            className="justify-center px-4 py-3.5 md:py-4 text-center font-mono text-[13px] md:text-sm"
+            className="border-0 bg-transparent p-0 text-center font-mono text-xs text-[var(--text-tertiary)] hover:bg-transparent hover:text-[var(--accent-cyan)] md:text-sm"
           />
           <PortfolioDownloadButton
             variant="secondary"
-            className="justify-center px-4 py-3.5 md:py-4 text-center font-mono text-[13px] md:text-sm"
+            className="border-0 bg-transparent p-0 text-center font-mono text-xs text-[var(--text-tertiary)] hover:bg-transparent hover:text-[var(--accent-cyan)] md:text-sm"
           />
-          <ImpactCareerDownloadButton className="px-4 py-3.5 md:py-4 font-mono text-[13px] md:text-sm" />
+          <a href="#contact" className="font-mono text-xs text-[var(--text-tertiary)] transition-colors hover:text-[var(--accent-cyan)] md:text-sm">
+            {t("hero.cta.contact")}
+          </a>
         </div>
       </div>
 

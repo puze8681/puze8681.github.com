@@ -28,7 +28,7 @@ export const skillsData: LocalizedData<Skill[]> = {
     },
     {
       icon: "GitBranch",
-      title: "Infrastructure & DevOps",
+      title: "Infrastructure & CI/CD",
       description: "GCP • Docker • CI/CD • GitHub Actions • Fastlane",
       details: ["인프라 설계", "배포 자동화", "운영 안정화"],
     },
@@ -66,7 +66,7 @@ export const skillsData: LocalizedData<Skill[]> = {
     },
     {
       icon: "GitBranch",
-      title: "Infrastructure & DevOps",
+      title: "Infrastructure & CI/CD",
       description: "GCP • Docker • CI/CD • GitHub Actions • Fastlane",
       details: ["Infrastructure Design", "Deploy Automation", "Operations"],
     },

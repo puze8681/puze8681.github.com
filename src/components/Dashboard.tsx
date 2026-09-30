@@ -1,220 +1,206 @@
 "use client";
 
-import { Activity, Calendar, Code, GraduationCap, Store, UsersRound } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, BrainCircuit, Layers3, Rocket, Wrench } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const statsData = {
-  ko: [
-    { icon: Calendar, value: "7", label: "Years", description: "개발 경력" },
-    { icon: Code, value: "20+", label: "Projects", description: "프로젝트 수행" },
-    { icon: GraduationCap, value: "13", label: "Universities", description: "잇츠미·잇츠밀 도입 대학" },
-    { icon: UsersRound, value: "11만+", label: "Users", description: "퇴사 시점 전체 사용자 추정*" },
-    { icon: Activity, value: "6만+", label: "MAU", description: "퇴사 시점 월간 활성 사용자 추정*" },
-    { icon: Store, value: "100+", label: "Stores", description: "잇츠밀 도입 매장*" },
-  ],
-  en: [
-    { icon: Calendar, value: "7", label: "Years", description: "Development career" },
-    { icon: Code, value: "20+", label: "Projects", description: "Projects completed" },
-    { icon: GraduationCap, value: "13", label: "Universities", description: "ItsMe & ItsMeal adoption" },
-    { icon: UsersRound, value: "110K+", label: "Users", description: "Estimated total users at departure*" },
-    { icon: Activity, value: "60K+", label: "MAU", description: "Estimated MAU at departure*" },
-    { icon: Store, value: "100+", label: "Stores", description: "ItsMeal stores*" },
-  ],
-};
-
-const currentWorkData = {
-  ko: [
-    {
-      company: "하이퍼노바",
-      role: "Product Engineer",
-      period: "2026.07 ~ 현재",
-      projects: ["헤이링(Heyring) AI", "Flutter 모바일 앱 개발", "서비스 인프라 설계"],
-    },
-  ],
-  en: [
-    {
-      company: "Hypernova",
-      role: "Product Engineer",
-      period: "2026.07 ~ Present",
-      projects: ["Heyring AI", "Flutter mobile app", "Service infrastructure design"],
-    },
-  ],
-};
-
-const techHighlights = [
-  { category: "Mobile", techs: ["Flutter", "Kotlin", "Swift"] },
-  { category: "Frontend", techs: ["React", "Next.js", "TypeScript"] },
-  { category: "Backend", techs: ["Spring Boot", "FastAPI", "Firebase"] },
-  { category: "AI / Infra", techs: ["RAG", "GCP", "Docker"] },
-];
-
-const achievementsData = {
-  ko: [
-    { label: "헤이링 AI", value: "21→6분", description: "모바일 빌드 약 71% 단축" },
-    { label: "댓츠원", value: "DX", description: "웹·학생 앱·키오스크 통합" },
-    { label: "한국외대", value: "DAU ~80", description: "일 질문 약 300건 · 오픈 2주차" },
-    { label: "화이트블록", value: "흑자 전환", description: "외부 투자 없는 제품 성장에 기여" },
-  ],
-  en: [
-    { label: "Heyring AI", value: "21→6 min", description: "Mobile builds about 71% faster" },
-    { label: "That's One", value: "DX", description: "Web, student app, and kiosk" },
-    { label: "HUFS", value: "DAU ~80", description: "About 300 questions/day · Week 2" },
-    { label: "Whiteblock", value: "Profitable", description: "Contributed to bootstrapped growth" },
-  ],
-};
-
-const quickLinksData = {
-  ko: [
-    { label: "경력", href: "#experience" },
-    { label: "프로젝트", href: "#projects" },
-    { label: "기술 스택", href: "#skills" },
-    { label: "소개", href: "#about" },
-    { label: "연락처", href: "#contact" },
-  ],
-  en: [
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ],
+const overviewData = {
+  ko: {
+    eyebrow: "HOW I BUILD",
+    title: "제품의 시작부터 운영까지 연결합니다",
+    description:
+      "특정 기술이나 한 제품에 머무르지 않고, 문제를 정의한 뒤 필요한 기술을 연결해 실제 사용되는 제품으로 완성합니다.",
+    proof: ["개발 경력 7년", "프로젝트 20+", "모바일 · 웹 · 백엔드", "AI/AX · 인프라"],
+    capabilities: [
+      {
+        icon: Rocket,
+        title: "0→1 제품 구축",
+        description: "요구사항이 정리되지 않은 단계에서 구조를 설계하고, 사용자가 만나는 첫 버전까지 빠르게 출시합니다.",
+      },
+      {
+        icon: Layers3,
+        title: "모바일 중심 End-to-End 개발",
+        description: "Flutter 앱을 중심으로 웹·백엔드·인프라까지 제품에 필요한 영역을 연결해 개발합니다.",
+      },
+      {
+        icon: BrainCircuit,
+        title: "AI/AX 운영 전환",
+        description: "상담·학사 행정·기업 운영처럼 사람이 반복하던 업무를 실제 사용 가능한 AI 시스템으로 전환합니다.",
+      },
+      {
+        icon: Wrench,
+        title: "출시 이후 운영 개선",
+        description: "CI/CD, 장애 구조, 성능과 현장 장비까지 운영 단계에서 드러나는 병목을 찾아 개선합니다.",
+      },
+    ],
+    selectedEyebrow: "SELECTED WORK",
+    selectedTitle: "역량을 증명하는 대표 작업",
+    selectedDescription: "현재의 전문성과 경력의 깊이를 가장 잘 보여주는 세 가지 사례입니다.",
+    works: [
+      {
+        index: "01",
+        category: "현재 제품 · Product Engineering",
+        title: "헤이링(Heyring) AI",
+        summary: "모바일 제품 개선부터 학습 기능 출시, 배포 파이프라인과 예약 전화 인프라 설계까지 연결합니다.",
+        outcome: "모바일 빌드 21분대 → 6분대 · 약 71% 단축",
+        action: "사례 자세히 보기",
+        href: "/portfolio/heyring-ai",
+      },
+      {
+        index: "02",
+        category: "장기 제품 · 0→1 & Scale",
+        title: "잇츠미 · 잇츠밀",
+        summary: "서비스와 고객이 없던 단계에서 두 제품을 구축하고 첫 고객 확보부터 다수 대학의 장기 운영까지 기여했습니다.",
+        outcome: "첫 고객 → 13개 대학 · 외부 투자 없이 흑자 전환 기여",
+        action: "관련 프로젝트 보기",
+        href: "#whiteblock-products",
+      },
+      {
+        index: "03",
+        category: "외부 프로젝트 · AI/AX",
+        title: "한국외대 AI 학사 챗봇",
+        summary: "학사 규정과 행정 정보를 근거와 함께 답변하고, 낮은 신뢰도의 답변을 검토하는 운영 흐름을 설계했습니다.",
+        outcome: "오픈 2주차 DAU 약 80명 · 하루 질문 약 300건",
+        action: "사례 자세히 보기",
+        href: "/portfolio/hufs-ai-chatbot",
+      },
+    ],
+  },
+  en: {
+    eyebrow: "HOW I BUILD",
+    title: "From product zero to reliable operations",
+    description:
+      "I define the problem, connect the technologies it needs, and turn it into a product people can actually use and operate.",
+    proof: ["7 years building products", "20+ projects", "Mobile · Web · Backend", "AI/AX · Infrastructure"],
+    capabilities: [
+      {
+        icon: Rocket,
+        title: "Zero-to-One Products",
+        description: "I shape ambiguous requirements, design the structure, and ship the first usable version quickly.",
+      },
+      {
+        icon: Layers3,
+        title: "Mobile-Led, End to End",
+        description: "Starting with Flutter, I connect web, backend, and infrastructure into one coherent product.",
+      },
+      {
+        icon: BrainCircuit,
+        title: "AI for Real Operations",
+        description: "I turn repetitive work in consulting, academic administration, and business operations into usable AI systems.",
+      },
+      {
+        icon: Wrench,
+        title: "Operational Improvement",
+        description: "I improve CI/CD, failure boundaries, performance, and on-site hardware after products reach production.",
+      },
+    ],
+    selectedEyebrow: "SELECTED WORK",
+    selectedTitle: "Work that demonstrates how I build",
+    selectedDescription: "Three cases that best represent my current focus and the depth of my experience.",
+    works: [
+      {
+        index: "01",
+        category: "Current Product · Product Engineering",
+        title: "Heyring AI",
+        summary: "Connecting mobile product improvements, learning features, delivery pipelines, and scheduled-call infrastructure design.",
+        outcome: "Mobile build time: 21 min → 6 min · about 71% faster",
+        action: "View case study",
+        href: "/portfolio/heyring-ai",
+      },
+      {
+        index: "02",
+        category: "Long-Term Product · 0→1 & Scale",
+        title: "ItsMe · ItsMeal",
+        summary: "Built both products before the company had a live service or customer, then helped scale them into long-term university operations.",
+        outcome: "First customer → 13 universities · contributed to profitability without outside funding",
+        action: "View related projects",
+        href: "#whiteblock-products",
+      },
+      {
+        index: "03",
+        category: "External Project · AI/AX",
+        title: "HUFS Academic AI Chatbot",
+        summary: "Designed a grounded academic-information assistant and an operational review flow for low-confidence answers.",
+        outcome: "Week 2: about 80 DAU · about 300 questions per day",
+        action: "View case study",
+        href: "/portfolio/hufs-ai-chatbot",
+      },
+    ],
+  },
 };
 
 export default function Dashboard() {
   const { language } = useLanguage();
-  const stats = statsData[language];
-  const currentWork = currentWorkData[language];
-  const keyAchievements = achievementsData[language];
-  const quickLinks = quickLinksData[language];
+  const content = overviewData[language];
 
   return (
-    <section className="flex flex-col gap-8 md:gap-10 section-padding py-10 md:py-14 w-full bg-[var(--bg-surface)]">
-      {/* 상단 통계 카드 */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 md:gap-4">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="flex flex-col gap-2.5 p-4 md:p-5 rounded-xl bg-[var(--bg-inset)] border border-[var(--bg-surface)]"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--bg-surface)]">
-                <stat.icon className="w-5 h-5 text-[var(--accent-cyan)]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-mono text-xl md:text-2xl font-bold text-[var(--text-primary)] tracking-[-0.01em]">
-                  {stat.value}
+    <section className="section-padding w-full bg-[var(--bg-surface)] py-14 md:py-20">
+      <div className="flex flex-col gap-16 md:gap-24">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+          <div className="flex flex-col gap-4">
+            <span className="text-xs font-semibold text-[var(--accent-cyan)]">{content.eyebrow}</span>
+            <h2 className="max-w-xl text-3xl font-bold text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+              {content.title}
+            </h2>
+            <p className="max-w-xl text-base leading-[1.75] text-[var(--text-secondary)] md:text-lg">
+              {content.description}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {content.proof.map((item) => (
+                <span key={item} className="rounded-full border border-[var(--bg-inset)] bg-[var(--bg-primary)] px-3 py-1.5 text-xs text-[var(--text-tertiary)] md:text-sm">
+                  {item}
                 </span>
-                <span className="text-xs text-[var(--text-muted)]">{stat.label}</span>
-              </div>
+              ))}
             </div>
-            <span className="text-xs md:text-sm leading-[1.55] text-[var(--text-tertiary)] hidden sm:block">{stat.description}</span>
           </div>
-        ))}
-      </div>
-      <p className="-mt-5 text-right text-[11px] leading-[1.55] text-[var(--text-muted)]">
-        * {language === "ko" ? "2025년 여름 10개 대학 실측치를 2026.02의 13개 대학 기준으로 보수 환산" : "Conservative Feb 2026 estimate from measured summer 2025 figures at 10 universities"}
-      </p>
 
-      {/* 하단 상세 정보 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-        {/* 최근 경력 */}
-        <div className="flex flex-col gap-4 p-5 md:p-6 rounded-xl bg-[var(--bg-inset)]">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-[var(--accent-cyan)]" />
-            <span className="text-xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
-              {language === "ko" ? "최근 경력" : "Latest Experience"}
-            </span>
+          <div className="grid gap-3 sm:grid-cols-2 md:gap-4">
+            {content.capabilities.map((capability) => (
+              <article key={capability.title} className="flex flex-col gap-3 rounded-xl bg-[var(--bg-inset)] p-5 md:p-6">
+                <capability.icon className="h-5 w-5 text-[var(--accent-cyan)]" aria-hidden="true" />
+                <h3 className="text-lg font-bold text-[var(--text-primary)]">{capability.title}</h3>
+                <p className="text-sm leading-[1.7] text-[var(--text-secondary)]">{capability.description}</p>
+              </article>
+            ))}
           </div>
-          {currentWork.map((work) => (
-            <div key={work.company} className="flex flex-col gap-2">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-                <span className="text-lg font-bold text-[var(--text-primary)]">
-                  {work.company}
-                </span>
-                <span className="font-mono text-xs text-[var(--text-muted)]">
-                  {work.period}
-                </span>
-              </div>
-              <span className="text-sm text-[var(--accent-cyan)]">{work.role}</span>
-              <div className="flex flex-col gap-1.5 mt-1">
-                {work.projects.map((project) => (
-                  <span key={project} className="text-sm text-[var(--text-secondary)]">
-                    • {project}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
 
-        {/* 기술 스택 하이라이트 */}
-        <div className="flex flex-col gap-4 p-5 md:p-6 rounded-xl bg-[var(--bg-inset)]">
-          <span className="text-xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
-            Tech Stack
-          </span>
+        <div id="selected-work" className="scroll-mt-20 flex flex-col gap-8 md:gap-10">
           <div className="flex flex-col gap-3">
-            {techHighlights.map((item) => (
-              <div key={item.category} className="flex items-center gap-3">
-                <span className="w-16 text-sm font-semibold text-[var(--text-primary)]">
-                  {item.category}
-                </span>
-                <div className="flex gap-2 flex-wrap">
-                  {item.techs.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 rounded bg-[var(--bg-surface)] font-mono text-xs text-[var(--accent-cyan)]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+            <span className="text-xs font-semibold text-[var(--accent-cyan)]">{content.selectedEyebrow}</span>
+            <h2 className="text-3xl font-bold text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+              {content.selectedTitle}
+            </h2>
+            <p className="max-w-2xl text-base leading-[1.75] text-[var(--text-secondary)] md:text-lg">
+              {content.selectedDescription}
+            </p>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3 lg:gap-5">
+            {content.works.map((work) => (
+              <Link key={work.title} href={work.href} className="group flex min-h-full flex-col gap-5 rounded-xl bg-[var(--bg-inset)] p-5 transition-colors hover:bg-[var(--bg-primary)] md:p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col gap-2">
+                    <span className="font-mono text-xs text-[var(--accent-cyan)]">{work.index}</span>
+                    <span className="text-xs leading-[1.5] text-[var(--text-muted)]">{work.category}</span>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-[var(--text-muted)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--accent-cyan)]" aria-hidden="true" />
                 </div>
-              </div>
+                <div className="flex flex-1 flex-col gap-3">
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent-cyan)] md:text-2xl">{work.title}</h3>
+                  <p className="text-sm leading-[1.7] text-[var(--text-secondary)]">{work.summary}</p>
+                </div>
+                <div className="border-t border-[var(--bg-surface)] pt-4">
+                  <p className="text-sm font-semibold leading-[1.6] text-[var(--text-primary)]">{work.outcome}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm text-[var(--accent-cyan)]">
+                    {work.action}
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
-
-        {/* 주요 성과 */}
-        <div className="flex flex-col gap-4 p-5 md:p-6 rounded-xl bg-[var(--bg-inset)] md:col-span-2 lg:col-span-1">
-          <span className="text-xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
-            Key Achievements
-          </span>
-          <div className="grid grid-cols-2 gap-3">
-            {keyAchievements.map((achievement) => (
-              <div
-                key={achievement.label}
-                className="flex flex-col gap-1.5 p-3 rounded-lg bg-[var(--bg-surface)]"
-              >
-                <div className="flex items-baseline gap-2 flex-wrap">
-                  <span className="text-sm font-bold text-[var(--text-primary)]">
-                    {achievement.label}
-                  </span>
-                  <span className="font-mono text-xs text-[var(--accent-cyan)]">
-                    {achievement.value}
-                  </span>
-                </div>
-                <span className="text-xs text-[var(--text-muted)]">
-                  {achievement.description}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 빠른 네비게이션 - 모바일에서는 숨김 */}
-      <div className="hidden md:flex items-center justify-center gap-4 pt-2">
-        <span className="text-sm text-[var(--text-muted)]">
-          {language === "ko" ? "바로가기:" : "Quick links:"}
-        </span>
-        {quickLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="px-4 py-2 rounded-lg bg-[var(--bg-inset)] text-sm text-[var(--text-secondary)] hover:text-[var(--accent-cyan)] transition-colors"
-          >
-            {link.label}
-          </a>
-        ))}
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ const siteUrl = "https://puze8681.github.io";
 export const metadata: Metadata = {
   title: "박태준 | Product Engineer · Mobile & AI",
   description:
-    "7년간 20개 이상의 프로젝트를 수행한 Product Engineer. Flutter 모바일 앱부터 웹, 백엔드, AI/AX, 인프라까지 제품 전반을 설계하고 개발합니다.",
+    "7년간 복잡한 문제와 아이디어를 실제로 운영되는 제품으로 만들어온 Product Engineer. 모바일 앱을 중심으로 웹, 백엔드, AI/AX, 인프라까지 연결합니다.",
   keywords: [
     "박태준",
     "개발자",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "박태준 포트폴리오",
     title: "박태준 | Product Engineer · Mobile & AI",
     description:
-      "7년간 20개 이상의 프로젝트를 수행한 Product Engineer. 모바일부터 AI·인프라까지 제품 전반을 설계하고 개발합니다.",
+      "7년간 복잡한 문제와 아이디어를 실제로 운영되는 제품으로 만들어온 Product Engineer. 모바일부터 AI·인프라까지 제품 전반을 연결합니다.",
     images: [
       {
         url: "/images/profile/profile1.jpeg",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "박태준 | Product Engineer · Mobile & AI",
     description:
-      "7년간 20개 이상의 프로젝트를 수행한 Product Engineer.",
+      "7년간 복잡한 문제와 아이디어를 실제로 운영되는 제품으로 만들어온 Product Engineer.",
     images: ["/images/profile/profile1.jpeg"],
   },
   robots: {

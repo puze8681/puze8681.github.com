@@ -10,7 +10,7 @@ export const educationData: LocalizedData<Education[]> = {
     {
       name: "한국외국어대학교",
       major: "컴퓨터 공학부",
-      period: "2020.03 - 현재 재학중",
+      period: "2020.03 - 현재 재학 중",
     },
     {
       name: "선린인터넷고등학교",

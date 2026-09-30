@@ -97,7 +97,7 @@ export const experiencesData: LocalizedData<Experience[]> = {
       projects: [
         {
           name: "OKIT - 라이프로깅 서비스",
-          period: "2019.12 - 2020.09",
+          period: "2019.12 - 2020.08",
           description: "팀 프로젝트 (Android 1인, Backend 2인, PM 및 디자인 1인)",
           tasks: [
             "Kotlin을 사용하여 Android 앱 개발 (1인 개발)",
@@ -220,7 +220,7 @@ export const experiencesData: LocalizedData<Experience[]> = {
       projects: [
         {
           name: "OKIT - Life Logging Service",
-          period: "2019.12 - 2020.09",
+          period: "2019.12 - 2020.08",
           description: "Team project (Android 1, Backend 2, PM/Design 1)",
           tasks: [
             "Developed Android app using Kotlin (solo dev)",
