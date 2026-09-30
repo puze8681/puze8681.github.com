@@ -40,49 +40,49 @@ export const educationData: LocalizedData<Education[]> = {
 export const strengthsData: LocalizedData<Strength[]> = {
   ko: [
     {
-      title: "모바일 개발 특화",
+      title: "제품 전반을 만드는 엔지니어",
       description:
-        "2017년부터 iOS, Android 네이티브 앱 개발을 시작했고, 현재는 주로 Flutter로 크로스 플랫폼 앱을 개발하고 있습니다. 필요한 경우 React 웹이나 Python 서버 작업도 진행합니다.",
+        "Flutter 모바일 앱부터 Next.js 웹, Spring Boot·FastAPI 백엔드, 인프라까지 제품에 필요한 영역을 연결해 개발합니다.",
     },
     {
-      title: "프로젝트에 맞춰 기술 학습",
+      title: "AI/AX를 실제 운영에 연결",
       description:
-        "프로젝트 요구사항에 따라 Flutter, Kotlin, Swift, React 등 필요한 기술을 학습하며 적용해왔습니다. 새로운 기술이 필요하면 문서와 예제를 보며 빠르게 익히는 편입니다.",
+        "입시 상담, 학사 행정, 기업 재무·운영처럼 사람이 반복하던 업무를 AI와 자동화 시스템으로 전환하고 실제 사용 흐름에 안착시킵니다.",
     },
     {
-      title: "혼자서도, 팀에서도",
+      title: "0→1부터 운영까지",
       description:
-        "소규모 프로젝트는 기획부터 배포까지 혼자 진행한 경험이 있고, 잇츠밀/잇츠미처럼 4년간 팀 단위로 개발한 경험도 있습니다. Jira, Figma, Slack 등 협업 툴 사용에 익숙합니다.",
+        "요구사항 정리와 아키텍처 설계부터 구현, 배포, 운영 개선까지 제품 생애주기 전체를 맡아왔으며 팀 개발과 단독 구축 모두에 익숙합니다.",
     },
   ],
   en: [
     {
-      title: "Mobile Development Specialist",
+      title: "End-to-End Product Engineer",
       description:
-        "Started iOS and Android native development in 2017, now mainly building cross-platform apps with Flutter. Also work on React web and Python server when needed.",
+        "I connect the layers a product needs, from Flutter mobile apps and Next.js web interfaces to Spring Boot/FastAPI backends and infrastructure.",
     },
     {
-      title: "Learning Tech for Projects",
+      title: "AI/AX for Real Operations",
       description:
-        "I've learned and applied Flutter, Kotlin, Swift, React based on project needs. When new tech is required, I quickly pick it up through docs and examples.",
+        "I turn repetitive workflows in admissions consulting, academic administration, and corporate finance and operations into AI-assisted, production-ready systems.",
     },
     {
-      title: "Solo or Team Player",
+      title: "From Zero to Operations",
       description:
-        "I've handled small projects from planning to deployment alone, and also worked in teams for 4 years on projects like ItsMeal/ItsMe. Comfortable with Jira, Figma, Slack.",
+        "I work across requirements, architecture, implementation, deployment, and operational improvement, both independently and as part of a product team.",
     },
   ],
 };
 
 export const statsData: LocalizedData<Stat[]> = {
   ko: [
-    { value: "8+", label: "Years Experience" },
-    { value: "16+", label: "Projects Completed" },
+    { value: "7", label: "Years Experience" },
+    { value: "20+", label: "Projects Completed" },
     { value: "8", label: "Awards Won" },
   ],
   en: [
-    { value: "8+", label: "Years Experience" },
-    { value: "16+", label: "Projects Completed" },
+    { value: "7", label: "Years Experience" },
+    { value: "20+", label: "Projects Completed" },
     { value: "8", label: "Awards Won" },
   ],
 };

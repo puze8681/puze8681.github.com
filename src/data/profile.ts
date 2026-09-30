@@ -6,8 +6,8 @@ export const profile: Profile = {
     en: "Taejun Park",
   },
   title: {
-    ko: "Mobile & Full-Stack Developer",
-    en: "Mobile & Full-Stack Developer",
+    ko: "Product Engineer · Mobile & AI",
+    en: "Product Engineer · Mobile & AI",
   },
   email: "puze8681@gmail.com",
   phone: "010-9790-8310",
@@ -15,8 +15,8 @@ export const profile: Profile = {
   linkedin: "https://linkedin.com/in/puze8681",
   portfolio: "https://puze8681.github.io",
   summary: {
-    ko: "8년간 16개 이상의 프로젝트를 수행하며 모바일 앱 개발부터 백엔드, 프론트엔드까지 다양한 영역의 개발 경험을 쌓았습니다. 현재는 Flutter 기반 크로스 플랫폼 앱 개발을 주로 담당하고 있습니다.",
-    en: "With 8 years of experience across 16+ projects, I've built expertise spanning mobile apps, backend, and frontend development. Currently focusing on Flutter-based cross-platform app development.",
+    ko: "7년간 20개 이상의 프로젝트를 수행하며 모바일 앱, 웹, 백엔드, AI/AX, 인프라까지 제품 전반을 개발했습니다. 현재 하이퍼노바에서 헤이링(Heyring) AI의 Flutter 앱과 인프라를 설계·개발하고 있습니다.",
+    en: "With 7 years of experience across 20+ projects, I build products spanning mobile apps, web, backend, AI/AX, and infrastructure. I currently design and develop the Flutter app and infrastructure for Heyring AI at Hypernova.",
   },
 };
 

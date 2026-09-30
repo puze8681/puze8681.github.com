@@ -45,8 +45,10 @@ export interface ProjectImage {
 }
 
 export interface ProjectStats {
-  commits: string;
-  years: string;
+  primary: string;
+  primaryLabel: string;
+  secondary: string;
+  secondaryLabel: string;
   features: string;
 }
 

@@ -1,12 +1,13 @@
 "use client";
 
-import { ExternalLink, GitCommit, Award, CheckCircle, Smartphone, Monitor, TabletSmartphone, FileText, X, ArrowRight, BookOpen } from "lucide-react";
+import { ExternalLink, Award, CheckCircle, Smartphone, Monitor, TabletSmartphone, FileText, X, ArrowRight, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useCallback } from "react";
 import StoreBadges from "./StoreBadges";
 import ImageModal from "./ImageModal";
 import RetrospectiveModal from "./RetrospectiveModal";
+import ProjectCard from "./portfolio/ProjectCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   majorProjectsData,
@@ -51,6 +52,8 @@ export default function Projects() {
   const texts = projectSectionTexts[language];
   const majorProjects = majorProjectsData[language];
   const otherProjects = otherProjectsData[language];
+  const recentProjects = otherProjects.filter((project) => project.id >= 17);
+  const previousProjects = otherProjects.filter((project) => project.id < 17);
   const barrierFreeProject = barrierFreeProjectData[language];
   const itsmealHighlights = itsmealHighlightsData[language];
   const itsmeHighlights = itsmeHighlightsData[language];
@@ -68,12 +71,24 @@ export default function Projects() {
         <span className="text-xs font-semibold tracking-widest text-[var(--accent-cyan)] uppercase">
           {texts.label}
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.01em]">
           {texts.title}
         </h2>
         <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed">
           {texts.description}
         </p>
+      </div>
+
+      {/* 최근 프로젝트 */}
+      <div className="flex flex-col gap-6">
+        <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)]">
+          {language === "ko" ? "최근 프로젝트" : "Recent Projects"}
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          {recentProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} language={language} />
+          ))}
+        </div>
       </div>
 
       {/* 주요 프로젝트 */}
@@ -104,17 +119,16 @@ export default function Projects() {
             {project.stats && (
               <div className="flex flex-wrap gap-6 md:gap-8">
                 <div className="flex items-center gap-2">
-                  <GitCommit className="w-4 h-4 text-[var(--accent-cyan)]" />
                   <span className="font-mono text-lg font-bold text-[var(--text-primary)]">
-                    {project.stats.commits}
+                    {project.stats.primary}
                   </span>
-                  <span className="text-sm text-[var(--text-tertiary)]">commits</span>
+                  <span className="text-sm text-[var(--text-tertiary)]">{project.stats.primaryLabel}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-lg font-bold text-[var(--text-primary)]">
-                    {project.stats.years}
+                    {project.stats.secondary}
                   </span>
-                  <span className="text-sm text-[var(--text-tertiary)]">{texts.devPeriod}</span>
+                  <span className="text-sm text-[var(--text-tertiary)]">{project.stats.secondaryLabel}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-[var(--text-tertiary)]">
@@ -147,14 +161,9 @@ export default function Projects() {
                     key={highlight.category}
                     className="flex flex-col gap-3 p-4 rounded-lg bg-[var(--bg-inset)]"
                   >
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                      <h4 className="text-sm font-bold text-[var(--text-primary)]">
-                        {highlight.category}
-                      </h4>
-                      <span className="font-mono text-xs text-[var(--accent-cyan)]">
-                        {highlight.commits} commits
-                      </span>
-                    </div>
+                    <h4 className="text-sm font-bold text-[var(--text-primary)]">
+                      {highlight.category}
+                    </h4>
                     <ul className="flex flex-col gap-2">
                       {highlight.features.map((feature, idx) => (
                         <li
@@ -278,9 +287,7 @@ export default function Projects() {
             <span className="font-mono text-sm text-[var(--text-muted)]">
               {barrierFreeProject.period}
             </span>
-            <span className="font-mono text-xs text-[var(--accent-cyan)]">
-              86+ commits
-            </span>
+            <span className="font-mono text-xs text-[var(--accent-cyan)]">47개 접근성 지표 적합</span>
           </div>
         </div>
 
@@ -344,7 +351,7 @@ export default function Projects() {
           {texts.otherProjects}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-          {otherProjects.map((project) => (
+          {previousProjects.map((project) => (
             <div
               key={project.id}
               className="flex flex-col gap-4 p-5 md:p-6 rounded-xl bg-[var(--bg-surface)]"
@@ -354,14 +361,6 @@ export default function Projects() {
                   <span className="w-fit px-3 py-1.5 rounded bg-[var(--bg-inset)] font-mono text-xs font-semibold text-[var(--accent-cyan)]">
                     {project.tag}
                   </span>
-                  {project.commits && (
-                    <div className="flex items-center gap-1">
-                      <GitCommit className="w-3 h-3 text-[var(--accent-cyan)]" />
-                      <span className="font-mono text-xs text-[var(--text-muted)]">
-                        {project.commits} commits
-                      </span>
-                    </div>
-                  )}
                 </div>
                 <span className="font-mono text-xs text-[var(--text-muted)]">
                   {project.period}

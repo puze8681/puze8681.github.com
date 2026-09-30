@@ -3,30 +3,49 @@ import { Experience, LocalizedData } from "./types";
 export const experiencesData: LocalizedData<Experience[]> = {
   ko: [
     {
+      company: "하이퍼노바",
+      role: "Product Engineer",
+      period: "2026.07 - 현재",
+      projects: [
+        {
+          name: "헤이링(Heyring) AI",
+          period: "2026.07 ~",
+          description: "예약된 시간에 AI 튜터와 통화하고 맞춤형 피드백을 받는 AI 전화영어 서비스",
+          tasks: [
+            "입사 직후 모바일 CI/CD를 구축·개선해 빌드 시간을 21분대에서 6분대로 약 71% 단축",
+            "영어 전용 학습 경험을 일본어까지 확장하고, 단어·표현을 드래그해 저장·학습하는 기능 개발",
+            "예약 전화 처리의 병목을 분석하고 스케줄러·디스패처·큐·발송 워커로 역할을 분리한 인프라 개선 설계",
+            "Flutter 앱부터 백엔드·인프라까지 제품 요구사항을 통합 구현",
+          ],
+        },
+      ],
+    },
+    {
       company: "화이트블록",
       role: "서비스 개발팀 / Developer",
       period: "2021.12 - 2026.02",
       projects: [
         {
-          name: "잇츠밀 - It's Meal",
-          period: "2022.02 ~",
-          description: "POS/KIOSK 등 식음료/유통 매장의 전체 인프라 통합 솔루션 어플리케이션",
+          name: "잇츠미 - It'sMe 종합소비플랫폼 2.0",
+          period: "2021.12 - 2026.02",
+          description: "서비스와 고객사가 없던 단계에서 시작해 첫 대학 고객 계약으로 연결한 종합소비플랫폼",
           tasks: [
-            "Flutter 기반 크로스플랫폼 앱 개발 및 유지보수",
-            "POS, 키오스크, 주방 디스플레이 등 매장 운영 시스템 개발",
-            "결제 연동, 주문 관리, 재고 관리 기능 구현",
-            "지속적인 서비스 안정화 및 신규 기능 개선",
+            "입사 직후 2개월간 Flutter 기반 앱을 개발해 첫 버전을 출시",
+            "출시와 함께 한국외국어대학교를 첫 고객사로 확보하는 제품 기반 마련",
+            "퇴사 시점 13개 대학으로 확장되며 전체 사용자 11만 명 이상·MAU 6만 명 이상 규모로 성장 (2026.02 보수 추정)",
+            "EPAY 결제를 포함한 멤버십·포인트·쿠폰·결제 기능 개발",
+            "외부 투자 없이 사업을 이어온 회사가 흑자 전환하는 과정에서 핵심 제품 개발·운영을 담당",
           ],
         },
         {
-          name: "잇츠미 - It'sMe 종합소비플랫폼 2.0",
-          period: "2021.12 ~",
-          description: "크로스 플랫폼 기반 서비스 전면 리뉴얼",
+          name: "잇츠밀 - It's Meal",
+          period: "2022.02 - 2026.02",
+          description: "외부 POS·키오스크 연동 과제에서 출발해 자체 제품으로 구축한 매장 운영 통합 솔루션",
           tasks: [
-            "기존 네이티브 앱을 Flutter 기반 크로스플랫폼으로 전면 리뉴얼",
-            "멤버십, 포인트 적립/사용, 쿠폰, 결제 등 핵심 기능 개발",
-            "CI/CD 파이프라인 구축으로 배포 자동화 및 개발 효율성 향상",
-            "앱 성능 최적화 및 사용자 경험 개선",
+            "외부 솔루션 연동보다 자체 구축이 적합하다고 판단해 신규 제품으로 설계·개발",
+            "잇츠미와 함께 13개 대학에 도입되고 100개 이상 매장·300대 이상 기기에서 운영 (2026.02 기준)",
+            "POS·상품관리·KDS·호출기·식권인식기·매출집계·키오스크를 하나의 운영 체계로 구축",
+            "ANDNVCAT 결제와 USB·LAN·Bluetooth 프린터, 네이버 FaceSign 얼굴인식 결제 연동",
           ],
         },
         {
@@ -107,30 +126,49 @@ export const experiencesData: LocalizedData<Experience[]> = {
   ],
   en: [
     {
+      company: "Hypernova",
+      role: "Product Engineer",
+      period: "2026.07 - Present",
+      projects: [
+        {
+          name: "Heyring AI",
+          period: "2026.07 ~",
+          description: "AI phone-English service with scheduled tutor calls and personalized feedback",
+          tasks: [
+            "Introduced and optimized mobile CI/CD immediately after joining, reducing build time from 21 minutes to 6 minutes (about 71%)",
+            "Expanded the English-only experience to Japanese and built drag-to-save learning for words and expressions",
+            "Designed a scheduled-call architecture separating the scheduler, dispatcher, queue, and delivery workers to remove bottlenecks",
+            "Delivering product requirements across Flutter, backend, and infrastructure",
+          ],
+        },
+      ],
+    },
+    {
       company: "Whiteblock",
       role: "Service Dev Team / Developer",
       period: "2021.12 - 2026.02",
       projects: [
         {
-          name: "ItsMeal - It's Meal",
-          period: "2022.02 ~",
-          description: "Integrated POS/KIOSK solution for F&B and retail stores",
+          name: "ItsMe - Consumer Platform 2.0",
+          period: "2021.12 - 2026.02",
+          description: "A zero-to-one consumer platform that led from no service or customers to the first university contract",
           tasks: [
-            "Cross-platform app development and maintenance with Flutter",
-            "Developed store operation systems including POS, kiosk, kitchen display",
-            "Implemented payment integration, order management, inventory management",
-            "Continuous service stabilization and new feature improvements",
+            "Built and launched the first Flutter app within two months of joining",
+            "Established the product foundation that secured HUFS as the first customer",
+            "Expanded to 13 universities, with 110K+ total users and 60K+ MAU at departure (conservative Feb 2026 estimate)",
+            "Built membership, points, coupons, and EPAY-integrated payments",
+            "Owned core product development and operations through the company's bootstrapped path to profitability",
           ],
         },
         {
-          name: "ItsMe - Consumer Platform 2.0",
-          period: "2021.12 ~",
-          description: "Complete service renewal based on cross-platform",
+          name: "ItsMeal - It's Meal",
+          period: "2022.02 - 2026.02",
+          description: "An integrated store-operations product created from an external POS and kiosk integration task",
           tasks: [
-            "Full renewal of native app to Flutter-based cross-platform",
-            "Developed core features: membership, points, coupons, payments",
-            "Built CI/CD pipeline for deployment automation and dev efficiency",
-            "App performance optimization and UX improvements",
+            "Chose to build in-house instead of depending on external integrations and designed the new product",
+            "Deployed alongside ItsMe across 13 universities, 100+ stores, and 300+ installed devices (as of Feb 2026)",
+            "Unified POS, catalog management, KDS, pagers, meal-ticket readers, sales reporting, and kiosks",
+            "Integrated ANDNVCAT payments, USB/LAN/Bluetooth printers, and Naver FaceSign payments",
           ],
         },
         {
@@ -219,7 +257,7 @@ export const experienceSectionTexts: LocalizedData<{
   ko: {
     label: "Experience",
     title: "경력",
-    description: "2018년부터 다양한 프로젝트를 수행하며 쌓아온 개발 경험",
+    description: "7년간 다양한 프로젝트를 수행하며 쌓아온 개발 경험",
   },
   en: {
     label: "Experience",

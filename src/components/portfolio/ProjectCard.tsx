@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { GitCommit, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Project } from "@/data/types";
 
 interface ProjectCardProps {
@@ -22,7 +22,7 @@ export default function ProjectCard({ project, language }: ProjectCardProps) {
       className="group flex flex-col gap-4 p-5 md:p-6 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-inset)] transition-colors"
     >
       {/* 이미지 */}
-      {firstImage && (
+      {firstImage ? (
         <div className="relative aspect-video rounded-lg overflow-hidden bg-[var(--bg-inset)]">
           <Image
             src={firstImage.src}
@@ -31,26 +31,30 @@ export default function ProjectCard({ project, language }: ProjectCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
+      ) : (
+        <div className="relative aspect-video rounded-lg overflow-hidden bg-[var(--bg-inset)] border border-[var(--bg-surface)] flex items-center justify-center">
+          <div className="absolute -top-10 -right-6 w-32 h-32 rounded-full bg-[var(--accent-cyan)]/10" />
+          <div className="absolute -bottom-12 -left-8 w-40 h-40 rounded-full bg-[var(--accent-cyan)]/5" />
+          <div className="relative flex flex-col items-center gap-2 text-center px-6">
+            <span className="font-mono text-4xl md:text-5xl font-bold text-[var(--accent-cyan)]/70">
+              {project.title.charAt(0).toUpperCase()}
+            </span>
+            <span className="font-mono text-xs text-[var(--text-muted)] tracking-wider uppercase">
+              {project.tag}
+            </span>
+          </div>
+        </div>
       )}
 
-      {/* 태그와 커밋 */}
+      {/* 태그와 핵심 성과 */}
       <div className="flex items-center justify-between gap-2">
         <span className="px-3 py-1.5 rounded bg-[var(--bg-inset)] font-mono text-xs font-semibold text-[var(--accent-cyan)]">
           {project.tag}
         </span>
-        {project.commits && (
-          <div className="flex items-center gap-1">
-            <GitCommit className="w-3 h-3 text-[var(--accent-cyan)]" />
-            <span className="font-mono text-xs text-[var(--text-muted)]">
-              {project.commits} commits
-            </span>
-          </div>
-        )}
         {project.stats && (
-          <div className="flex items-center gap-1">
-            <GitCommit className="w-3 h-3 text-[var(--accent-cyan)]" />
+          <div className="flex items-center gap-1.5">
             <span className="font-mono text-xs text-[var(--text-muted)]">
-              {project.stats.commits} commits
+              {project.stats.primary} · {project.stats.primaryLabel}
             </span>
           </div>
         )}

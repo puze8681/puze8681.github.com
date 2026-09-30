@@ -14,7 +14,7 @@ export default function Experience() {
         <span className="text-xs font-semibold tracking-widest text-[var(--accent-cyan)] uppercase">
           {texts.label}
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.01em]">
           {texts.title}
         </h2>
         <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed">

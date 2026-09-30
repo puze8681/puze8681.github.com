@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, GitCommit, ExternalLink, Calendar, BookOpen } from "lucide-react";
+import { ArrowLeft, ExternalLink, Calendar, BookOpen } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Project, MajorProject, ProjectHighlight } from "@/data/types";
 import ImageGallery from "./ImageGallery";
@@ -98,13 +98,10 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           <span className="px-3 py-1.5 rounded bg-[var(--bg-surface)] font-mono text-xs font-semibold text-[var(--accent-cyan)]">
             {project.tag}
           </span>
-          {(project.commits || (project as MajorProject).stats?.commits) && (
-            <div className="flex items-center gap-1">
-              <GitCommit className="w-4 h-4 text-[var(--accent-cyan)]" />
-              <span className="font-mono text-sm text-[var(--text-muted)]">
-                {project.commits || (project as MajorProject).stats?.commits} commits
-              </span>
-            </div>
+          {(project as MajorProject).stats?.primary && (
+            <span className="font-mono text-sm text-[var(--text-muted)]">
+              {(project as MajorProject).stats.primary} · {(project as MajorProject).stats.primaryLabel}
+            </span>
           )}
         </div>
 
@@ -116,9 +113,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           <div className="flex items-center gap-2 text-[var(--text-muted)]">
             <Calendar className="w-4 h-4" />
             <span className="font-mono text-sm">{project.period}</span>
-            {(project as MajorProject).stats?.years && (
+            {(project as MajorProject).stats?.secondary && (
               <span className="text-sm">
-                ({(project as MajorProject).stats.years})
+                ({(project as MajorProject).stats.secondary} {(project as MajorProject).stats.secondaryLabel})
               </span>
             )}
           </div>
@@ -203,14 +200,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                 key={highlight.category}
                 className="flex flex-col gap-3 p-4 rounded-lg bg-[var(--bg-surface)]"
               >
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                  <h4 className="text-sm font-bold text-[var(--text-primary)]">
-                    {highlight.category}
-                  </h4>
-                  <span className="font-mono text-xs text-[var(--accent-cyan)]">
-                    {highlight.commits} commits
-                  </span>
-                </div>
+                <h4 className="text-sm font-bold text-[var(--text-primary)]">
+                  {highlight.category}
+                </h4>
                 <ul className="flex flex-col gap-2">
                   {highlight.features.map((feature, idx) => (
                     <li

@@ -742,9 +742,7 @@ const v = StyleSheet.create({
 // react-pdf 는 png/jpg 만 지원하므로 webp 는 변환본(png)을 가리킨다.
 const isUsableImage = (src: string) => /\.(png|jpe?g|webp)$/i.test(src);
 const toImageUrl = (src: string) => {
-  const pdfSrc = src
-    .replace(/^\/images\//, "/images-pdf/")
-    .replace(/\.webp$/i, ".png");
+  const pdfSrc = src.replace(/^\/images\//, "/images-pdf/").replace(/\.webp$/i, ".png");
   return `${fontBaseUrl}${encodeURI(pdfSrc)}`;
 };
 const firstThumb = (p: { images?: { src: string }[]; portfolioImages?: { src: string }[] }) => {
@@ -761,6 +759,10 @@ export default function PortfolioDocument({ language }: PortfolioDocumentProps) 
   const experiences = experiencesData[language];
   const majorProjects = majorProjectsData[language];
   const otherProjects = otherProjectsData[language];
+  const otherProjectPages = Array.from(
+    { length: Math.ceil(otherProjects.length / 3) },
+    (_, index) => otherProjects.slice(index * 3, index * 3 + 3),
+  );
   const skills = skillsData[language];
   const awards = awardsData[language];
   const certifications = certificationsData[language];
@@ -975,12 +977,12 @@ export default function PortfolioDocument({ language }: PortfolioDocumentProps) 
                 </View>
                 <View style={styles.majorProjectStats}>
                   <View style={styles.statItem}>
-                    <Text style={styles.statValue}>{majorProjects[0].stats.commits}</Text>
-                    <Text style={styles.statLabel}>{t.commits}</Text>
+                    <Text style={styles.statValue}>{majorProjects[0].stats.primary}</Text>
+                    <Text style={styles.statLabel}>{majorProjects[0].stats.primaryLabel}</Text>
                   </View>
                   <View style={styles.statItem}>
-                    <Text style={styles.statValue}>{majorProjects[0].stats.years}</Text>
-                    <Text style={styles.statLabel}>years</Text>
+                    <Text style={styles.statValue}>{majorProjects[0].stats.secondary}</Text>
+                    <Text style={styles.statLabel}>{majorProjects[0].stats.secondaryLabel}</Text>
                   </View>
                 </View>
               </View>
@@ -1010,7 +1012,6 @@ export default function PortfolioDocument({ language }: PortfolioDocumentProps) 
             {itsmealHighlights.map((highlight, index) => (
               <View key={index} style={styles.highlightItem} wrap={false}>
                 <Text style={styles.highlightCategory}>{highlight.category}</Text>
-                <Text style={styles.highlightCommits}>{highlight.commits} commits</Text>
                 {highlight.features.slice(0, 3).map((feature, fIndex) => (
                   <Text key={fIndex} style={styles.highlightFeature}>• {feature}</Text>
                 ))}
@@ -1059,12 +1060,12 @@ export default function PortfolioDocument({ language }: PortfolioDocumentProps) 
                 </View>
                 <View style={styles.majorProjectStats}>
                   <View style={styles.statItem}>
-                    <Text style={styles.statValue}>{majorProjects[1].stats.commits}</Text>
-                    <Text style={styles.statLabel}>{t.commits}</Text>
+                    <Text style={styles.statValue}>{majorProjects[1].stats.primary}</Text>
+                    <Text style={styles.statLabel}>{majorProjects[1].stats.primaryLabel}</Text>
                   </View>
                   <View style={styles.statItem}>
-                    <Text style={styles.statValue}>{majorProjects[1].stats.years}</Text>
-                    <Text style={styles.statLabel}>years</Text>
+                    <Text style={styles.statValue}>{majorProjects[1].stats.secondary}</Text>
+                    <Text style={styles.statLabel}>{majorProjects[1].stats.secondaryLabel}</Text>
                   </View>
                 </View>
               </View>
@@ -1094,7 +1095,6 @@ export default function PortfolioDocument({ language }: PortfolioDocumentProps) 
             {itsmeHighlights.map((highlight, index) => (
               <View key={index} style={styles.highlightItem} wrap={false}>
                 <Text style={styles.highlightCategory}>{highlight.category}</Text>
-                <Text style={styles.highlightCommits}>{highlight.commits} commits</Text>
                 {highlight.features.slice(0, 3).map((feature, fIndex) => (
                   <Text key={fIndex} style={styles.highlightFeature}>• {feature}</Text>
                 ))}
@@ -1105,46 +1105,45 @@ export default function PortfolioDocument({ language }: PortfolioDocumentProps) 
         <Text style={v.footer} fixed render={({ pageNumber }) => String(pageNumber)} />
       </Page>
 
-      {/* 8. 기타 프로젝트 - 이미지 포함 카드 (전체) */}
-      <Page size="A4" style={styles.page} break>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t.otherProjects}</Text>
-          <Text style={v.sectionIntro}>{t.otherProjectsIntro}</Text>
-          {otherProjects.map((project, index) => {
-            const thumb = firstThumb(project);
-            return (
-              <View key={index} style={v.pCard} wrap={false}>
-                <View style={v.pThumbBox}>
-                  {thumb ? (
-                    <Image style={v.pThumb} src={thumb} />
-                  ) : (
-                    <Text style={v.pThumbPlaceholder}>{project.tag.charAt(0)}</Text>
-                  )}
-                </View>
-                <View style={v.pBody}>
-                  <Text style={v.pTag}>{project.tag}</Text>
-                  <Text style={v.pTitle}>{project.title}</Text>
-                  <Text style={v.pPeriod}>{project.period}</Text>
-                  <Text style={v.pDesc}>{project.description}</Text>
-                  {project.features &&
-                    project.features.slice(0, 4).map((feature, fIndex) => (
-                      <Text key={fIndex} style={v.pFeature}>• {feature}</Text>
-                    ))}
-                  <View style={v.pTechRow}>
-                    {project.tech.slice(0, 5).map((tech, tIndex) => (
-                      <Text key={tIndex} style={v.pTechBadge}>{tech}</Text>
-                    ))}
+      {/* 8. 기타 프로젝트 - 카드가 페이지 경계에서 잘리지 않도록 3개씩 분리 */}
+      {otherProjectPages.map((projects, pageIndex) => (
+        <Page key={pageIndex} size="A4" style={styles.page}>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>{t.otherProjects}</Text>
+            {pageIndex === 0 && <Text style={v.sectionIntro}>{t.otherProjectsIntro}</Text>}
+            {projects.map((project, index) => {
+              const thumb = firstThumb(project);
+              return (
+                <View key={index} style={v.pCard} wrap={false}>
+                  <View style={v.pThumbBox}>
+                    {thumb ? (
+                      <Image style={v.pThumb} src={thumb} />
+                    ) : (
+                      <Text style={v.pThumbPlaceholder}>{project.tag.charAt(0)}</Text>
+                    )}
                   </View>
-                  {project.commits && (
-                    <Text style={v.pCommits}>{project.commits} commits</Text>
-                  )}
+                  <View style={v.pBody}>
+                    <Text style={v.pTag}>{project.tag}</Text>
+                    <Text style={v.pTitle}>{project.title}</Text>
+                    <Text style={v.pPeriod}>{project.period}</Text>
+                    <Text style={v.pDesc}>{project.description}</Text>
+                    {project.features &&
+                      project.features.slice(0, 4).map((feature, fIndex) => (
+                        <Text key={fIndex} style={v.pFeature}>• {feature}</Text>
+                      ))}
+                    <View style={v.pTechRow}>
+                      {project.tech.slice(0, 5).map((tech, tIndex) => (
+                        <Text key={tIndex} style={v.pTechBadge}>{tech}</Text>
+                      ))}
+                    </View>
+                  </View>
                 </View>
-              </View>
-            );
-          })}
-        </View>
-        <Text style={v.footer} fixed render={({ pageNumber }) => String(pageNumber)} />
-      </Page>
+              );
+            })}
+          </View>
+          <Text style={v.footer} fixed render={({ pageNumber }) => String(pageNumber)} />
+        </Page>
+      ))}
 
       {/* 9. 기술 스택 */}
       <Page size="A4" style={styles.page}>

@@ -528,7 +528,7 @@ export default function ResumeDocument({ language }: ResumeDocumentProps) {
                 <Text style={styles.majorProjectTitle}>{project.title}</Text>
                 <Text style={styles.majorProjectPeriod}>{project.period}</Text>
                 <Text style={styles.majorProjectStats}>
-                  {project.stats.commits} commits | {project.stats.years}
+                  {project.stats.primary} {project.stats.primaryLabel} | {project.stats.secondary} {project.stats.secondaryLabel}
                 </Text>
                 <Text style={styles.majorProjectDesc}>
                   {project.description}

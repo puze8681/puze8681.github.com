@@ -25,16 +25,16 @@ const connectLinks = [
 
 const sectionTexts = {
   ko: {
-    tagline1: "모바일과 웹을 아우르는",
-    tagline2: "풀스택 개발자",
+    tagline1: "모바일·AI·인프라를 연결하는",
+    tagline2: "Product Engineer",
     navigation: "NAVIGATION",
     connect: "CONNECT",
     rights: "All rights reserved.",
     built: "Built with Next.js & Tailwind CSS",
   },
   en: {
-    tagline1: "Full-Stack Developer",
-    tagline2: "for Mobile & Web",
+    tagline1: "Product Engineer",
+    tagline2: "across Mobile, AI & Infrastructure",
     navigation: "NAVIGATION",
     connect: "CONNECT",
     rights: "All rights reserved.",

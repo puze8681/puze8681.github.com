@@ -21,12 +21,12 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "contact",
 
     // Hero
-    "hero.badge": "Mobile & Full-Stack Developer",
+    "hero.badge": "Product Engineer · Mobile & AI",
     "hero.name": "박태준",
-    "hero.description1": "8년간 16개 이상의 프로젝트를 수행하며",
-    "hero.description2": "모바일과 웹, 서버를 아우르는 풀스택 개발자입니다.",
-    "hero.description3": "주로 Flutter와 Kotlin으로 모바일 앱을 개발하고,",
-    "hero.description4": "필요에 따라 React 웹이나 서버 작업도 함께 진행합니다.",
+    "hero.description1": "7년간 20개 이상의 프로젝트를 수행하며",
+    "hero.description2": "모바일부터 AI·인프라까지 제품을 만드는 Product Engineer입니다.",
+    "hero.description3": "Flutter 앱, 웹·백엔드, AI/AX 시스템을 설계하고,",
+    "hero.description4": "필요한 기술을 연결해 실제 운영 가능한 제품으로 구현합니다.",
     "hero.cta.projects": "프로젝트 보기",
     "hero.cta.contact": "연락하기",
 
@@ -101,12 +101,12 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "contact",
 
     // Hero
-    "hero.badge": "Mobile & Full-Stack Developer",
+    "hero.badge": "Product Engineer · Mobile & AI",
     "hero.name": "Taejun Park",
-    "hero.description1": "With 8 years of experience and 16+ projects,",
-    "hero.description2": "I'm a full-stack developer covering mobile, web, and server.",
-    "hero.description3": "I mainly develop mobile apps with Flutter and Kotlin,",
-    "hero.description4": "and also work on React web and server projects as needed.",
+    "hero.description1": "With 7 years of experience and 20+ projects,",
+    "hero.description2": "I'm a Product Engineer working across mobile, AI, and infrastructure.",
+    "hero.description3": "I design Flutter apps, web and backend systems, and AI/AX workflows,",
+    "hero.description4": "connecting the right technologies into production-ready products.",
     "hero.cta.projects": "View Projects",
     "hero.cta.contact": "Contact Me",
 

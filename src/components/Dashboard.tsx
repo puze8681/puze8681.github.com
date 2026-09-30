@@ -1,40 +1,42 @@
 "use client";
 
-import { Briefcase, Code, Trophy, GitCommit, Calendar } from "lucide-react";
+import { Activity, Calendar, Code, GraduationCap, Store, UsersRound } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const statsData = {
   ko: [
-    { icon: Calendar, value: "8+", label: "Years", description: "개발 경력 (2017~)" },
-    { icon: Briefcase, value: "4", label: "Companies", description: "재직 경험" },
-    { icon: Code, value: "16+", label: "Projects", description: "프로젝트 수행" },
-    { icon: GitCommit, value: "4,500+", label: "Commits", description: "주요 프로젝트 기여" },
-    { icon: Trophy, value: "8", label: "Awards", description: "수상 내역" },
+    { icon: Calendar, value: "7", label: "Years", description: "개발 경력" },
+    { icon: Code, value: "20+", label: "Projects", description: "프로젝트 수행" },
+    { icon: GraduationCap, value: "13", label: "Universities", description: "잇츠미·잇츠밀 도입 대학" },
+    { icon: UsersRound, value: "11만+", label: "Users", description: "퇴사 시점 전체 사용자 추정*" },
+    { icon: Activity, value: "6만+", label: "MAU", description: "퇴사 시점 월간 활성 사용자 추정*" },
+    { icon: Store, value: "100+", label: "Stores", description: "잇츠밀 도입 매장*" },
   ],
   en: [
-    { icon: Calendar, value: "8+", label: "Years", description: "Dev career (2017~)" },
-    { icon: Briefcase, value: "4", label: "Companies", description: "Work experience" },
-    { icon: Code, value: "16+", label: "Projects", description: "Projects completed" },
-    { icon: GitCommit, value: "4,500+", label: "Commits", description: "Major contributions" },
-    { icon: Trophy, value: "8", label: "Awards", description: "Awards won" },
+    { icon: Calendar, value: "7", label: "Years", description: "Development career" },
+    { icon: Code, value: "20+", label: "Projects", description: "Projects completed" },
+    { icon: GraduationCap, value: "13", label: "Universities", description: "ItsMe & ItsMeal adoption" },
+    { icon: UsersRound, value: "110K+", label: "Users", description: "Estimated total users at departure*" },
+    { icon: Activity, value: "60K+", label: "MAU", description: "Estimated MAU at departure*" },
+    { icon: Store, value: "100+", label: "Stores", description: "ItsMeal stores*" },
   ],
 };
 
 const currentWorkData = {
   ko: [
     {
-      company: "화이트블록",
-      role: "Mobile Developer",
-      period: "2021.12 ~ 2026.02",
-      projects: ["잇츠밀 (POS/KIOSK)", "잇츠미 2.0 (소비 플랫폼)", "베리어프리 키오스크 (NIA 검증)", "윤잇 외 다수"],
+      company: "하이퍼노바",
+      role: "Product Engineer",
+      period: "2026.07 ~ 현재",
+      projects: ["헤이링(Heyring) AI", "Flutter 모바일 앱 개발", "서비스 인프라 설계"],
     },
   ],
   en: [
     {
-      company: "Whiteblock",
-      role: "Mobile Developer",
-      period: "2021.12 ~ 2026.02",
-      projects: ["ItsMeal (POS/KIOSK)", "ItsMe 2.0 (Consumer Platform)", "Barrier-Free Kiosk (NIA Certified)", "Yooneat & more"],
+      company: "Hypernova",
+      role: "Product Engineer",
+      period: "2026.07 ~ Present",
+      projects: ["Heyring AI", "Flutter mobile app", "Service infrastructure design"],
     },
   ],
 };
@@ -42,22 +44,22 @@ const currentWorkData = {
 const techHighlights = [
   { category: "Mobile", techs: ["Flutter", "Kotlin", "Swift"] },
   { category: "Frontend", techs: ["React", "Next.js", "TypeScript"] },
-  { category: "Backend", techs: ["Flask", "Django", "Firebase"] },
-  { category: "DevOps", techs: ["GitHub Actions", "Fastlane", "Sentry"] },
+  { category: "Backend", techs: ["Spring Boot", "FastAPI", "Firebase"] },
+  { category: "AI / Infra", techs: ["RAG", "GCP", "Docker"] },
 ];
 
 const achievementsData = {
   ko: [
-    { label: "잇츠밀", value: "2,656 commits", description: "POS/키오스크 앱 개발" },
-    { label: "잇츠미", value: "1,317 commits", description: "크로스 플랫폼 앱 개발" },
-    { label: "베리어프리", value: "NIA 검증", description: "접근성 키오스크 전 과정 리드" },
-    { label: "레인타운쿠폰", value: "1인 개발", description: "앱 + 관리자 웹 개발" },
+    { label: "헤이링 AI", value: "21→6분", description: "모바일 빌드 약 71% 단축" },
+    { label: "댓츠원", value: "DX", description: "웹·학생 앱·키오스크 통합" },
+    { label: "한국외대", value: "DAU ~80", description: "일 질문 약 300건 · 오픈 2주차" },
+    { label: "화이트블록", value: "흑자 전환", description: "외부 투자 없는 제품 성장에 기여" },
   ],
   en: [
-    { label: "ItsMeal", value: "2,656 commits", description: "POS/Kiosk app development" },
-    { label: "ItsMe", value: "1,317 commits", description: "Cross-platform app" },
-    { label: "Barrier-Free", value: "NIA Certified", description: "Accessible kiosk (led entire process)" },
-    { label: "RaintownCoupon", value: "Solo dev", description: "App + Admin web" },
+    { label: "Heyring AI", value: "21→6 min", description: "Mobile builds about 71% faster" },
+    { label: "That's One", value: "DX", description: "Web, student app, and kiosk" },
+    { label: "HUFS", value: "DAU ~80", description: "About 300 questions/day · Week 2" },
+    { label: "Whiteblock", value: "Profitable", description: "Contributed to bootstrapped growth" },
   ],
 };
 
@@ -88,27 +90,30 @@ export default function Dashboard() {
   return (
     <section className="flex flex-col gap-8 md:gap-10 section-padding py-10 md:py-14 w-full bg-[var(--bg-surface)]">
       {/* 상단 통계 카드 */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 md:gap-4">
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="flex flex-col gap-3 p-5 rounded-xl bg-[var(--bg-inset)] border border-[var(--bg-surface)]"
+            className="flex flex-col gap-2.5 p-4 md:p-5 rounded-xl bg-[var(--bg-inset)] border border-[var(--bg-surface)]"
           >
             <div className="flex items-center gap-3">
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--bg-surface)]">
                 <stat.icon className="w-5 h-5 text-[var(--accent-cyan)]" />
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-2xl font-bold text-[var(--text-primary)]">
+                <span className="font-mono text-xl md:text-2xl font-bold text-[var(--text-primary)] tracking-[-0.01em]">
                   {stat.value}
                 </span>
                 <span className="text-xs text-[var(--text-muted)]">{stat.label}</span>
               </div>
             </div>
-            <span className="text-sm text-[var(--text-tertiary)] hidden sm:block">{stat.description}</span>
+            <span className="text-xs md:text-sm leading-[1.55] text-[var(--text-tertiary)] hidden sm:block">{stat.description}</span>
           </div>
         ))}
       </div>
+      <p className="-mt-5 text-right text-[11px] leading-[1.55] text-[var(--text-muted)]">
+        * {language === "ko" ? "2025년 여름 10개 대학 실측치를 2026.02의 13개 대학 기준으로 보수 환산" : "Conservative Feb 2026 estimate from measured summer 2025 figures at 10 universities"}
+      </p>
 
       {/* 하단 상세 정보 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">

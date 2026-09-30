@@ -180,7 +180,7 @@ export const itsmealHighlightsData: LocalizedData<ProjectHighlight[]> = {
       ],
     },
     {
-      category: "DevOps",
+      category: "CI/CD · 운영 도구",
       commits: "50+",
       features: [
         "GitHub Actions APK 자동 빌드 및 배포",
@@ -233,7 +233,7 @@ export const itsmealHighlightsData: LocalizedData<ProjectHighlight[]> = {
       ],
     },
     {
-      category: "DevOps",
+      category: "CI/CD & Operations Tooling",
       commits: "50+",
       features: [
         "GitHub Actions APK auto build & deploy",
@@ -343,10 +343,10 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       title: "잇츠밀 - It's Meal",
       period: "2022.02 ~ 2026.02",
       description:
-        "식음료/유통 매장의 POS, 키오스크, 식권 리더기 통합 솔루션. 4년간 2,656 commits으로 지속적인 기능 개발과 유지보수를 담당했습니다.",
+        "외부 POS·키오스크 연동 과정에서 자체 구축이 더 적합하다고 판단해 새로 만든 매장 운영 플랫폼입니다. 계획에 없던 제품을 잇츠미와 함께 13개 대학, 100개 이상 매장, 300대 이상 기기에서 운영되는 솔루션으로 확장했습니다. (2026년 2월 기준)",
       tech: ["Flutter", "Dart", "Sentry", "GitHub Actions", "Slack"],
       links: [],
-      stats: { commits: "2,656", years: "4년", features: "키오스크/POS/리더기" },
+      stats: { primary: "13개", primaryLabel: "도입 대학", secondary: "100+", secondaryLabel: "도입 매장", features: "설치 기기 300+" },
       hasDesignImages: true,
       hasHighlights: "itsmeal",
     },
@@ -357,13 +357,13 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       title: "잇츠미 - It'sMe 2.0",
       period: "2021.12 ~ 2026.02",
       description:
-        "종합소비플랫폼의 Flutter 기반 크로스 플랫폼 서비스. 4년간 1,317 commits으로 결제/장바구니 시스템 전면 개선, iOS/Android CI/CD 구축을 담당했습니다.",
+        "고객사와 매출, 운영 서비스가 없던 단계에서 입사 직후 2개월간 Flutter 앱을 개발해 출시했습니다. 한국외국어대학교 첫 계약에서 13개 대학으로 확장됐으며, 퇴사 시점 전체 사용자 11만 명 이상·MAU 6만 명 이상 규모로 보수 추정됩니다. 외부 투자 없이 사업을 이어온 회사가 흑자 전환하는 과정에서 핵심 제품 개발·운영을 담당했습니다.",
       tech: ["Flutter", "Dart", "Fastlane", "Firebase", "BLoC"],
       links: [
         { label: "Play Store", url: "https://play.google.com/store/apps/details?id=id.itsme.mobile" },
         { label: "App Store", url: "https://apps.apple.com/kr/app/잇츠미-itsme/id1512735891" },
       ],
-      stats: { commits: "1,317", years: "4년", features: "iOS/Android 크로스 플랫폼" },
+      stats: { primary: "11만+", primaryLabel: "전체 사용자 추정", secondary: "6만+", secondaryLabel: "MAU 추정", features: "13개 대학 · 2026.02" },
       hasAppDesignImages: true,
       hasHighlights: "itsme",
     },
@@ -376,10 +376,10 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       title: "ItsMeal - It's Meal",
       period: "2022.02 ~ 2026.02",
       description:
-        "Integrated POS, kiosk, and meal ticket reader solution for F&B/retail stores. Led continuous feature development and maintenance with 2,656 commits over 4 years.",
+        "A store-operations platform created after concluding that an in-house product was better than integrating external POS and kiosk solutions. Scaled alongside ItsMe to 13 universities, 100+ stores, and 300+ installed devices. (As of February 2026)",
       tech: ["Flutter", "Dart", "Sentry", "GitHub Actions", "Slack"],
       links: [],
-      stats: { commits: "2,656", years: "4 yrs", features: "Kiosk/POS/Reader" },
+      stats: { primary: "13", primaryLabel: "Universities", secondary: "100+", secondaryLabel: "Stores", features: "300+ installed devices" },
       hasDesignImages: true,
       hasHighlights: "itsmeal",
     },
@@ -390,13 +390,13 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
       title: "ItsMe - It'sMe 2.0",
       period: "2021.12 ~ 2026.02",
       description:
-        "Flutter-based cross-platform service for consumer platform. Led payment/cart system overhaul and iOS/Android CI/CD setup with 1,317 commits over 4 years.",
+        "Built and launched the Flutter app within two months when the company had no customers, revenue, or live service. It expanded from HUFS to 13 universities and an estimated 110K+ total users and 60K+ MAU by departure. I owned core product development and operations as the bootstrapped company reached profitability without external investment.",
       tech: ["Flutter", "Dart", "Fastlane", "Firebase", "BLoC"],
       links: [
         { label: "Play Store", url: "https://play.google.com/store/apps/details?id=id.itsme.mobile" },
         { label: "App Store", url: "https://apps.apple.com/kr/app/잇츠미-itsme/id1512735891" },
       ],
-      stats: { commits: "1,317", years: "4 yrs", features: "iOS/Android Cross-platform" },
+      stats: { primary: "110K+", primaryLabel: "Est. users", secondary: "60K+", secondaryLabel: "Est. MAU", features: "13 universities · Feb 2026" },
       hasAppDesignImages: true,
       hasHighlights: "itsme",
     },
@@ -406,6 +406,81 @@ export const majorProjectsData: LocalizedData<MajorProject[]> = {
 // 기타 프로젝트 데이터
 export const otherProjectsData: LocalizedData<Project[]> = {
   ko: [
+    {
+      id: 17,
+      slug: "heyring-ai",
+      tag: "Product Engineering",
+      title: "헤이링(Heyring) AI",
+      period: "2026.07 - 현재",
+      description:
+        "하이퍼노바의 AI 언어 학습 서비스입니다. Product Engineer로 합류한 직후 모바일 CI/CD를 적용해 빌드 시간을 21분대에서 6분대로 약 71% 단축했고, 일본어 학습과 단어·표현 저장 기능을 출시했습니다. 예약 전화 처리의 병목을 줄이기 위한 인프라 개선도 설계했습니다.",
+      tech: ["Flutter", "Dart", "CI/CD", "Queue", "Infrastructure", "Product Engineering"],
+      links: [
+        { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hypernovacorp.navatar_android" },
+        { label: "App Store", url: "https://apps.apple.com/us/app/id6511246156" },
+      ],
+      features: [
+        "모바일 CI/CD 적용 및 최적화: 빌드 21분대 → 6분대 (약 71% 단축)",
+        "영어 전용 서비스에 일본어 학습 지원 추가",
+        "단어·표현을 드래그해 저장하고 반복 학습하는 기능 개발",
+        "1분 주기 스케줄러·판단/디스패처·큐·발송 워커로 예약 전화 처리 역할 분리 설계",
+        "Flutter 앱부터 백엔드·인프라까지 연결한 Product Engineering",
+      ],
+    },
+    {
+      id: 18,
+      slug: "thats-one",
+      tag: "외부 프로젝트 · DX / Full-Stack",
+      title: "댓츠원 - 입시 컨설팅랩 DX 플랫폼",
+      period: "2026.05 - 2026.10",
+      description:
+        "대치동 입시 컨설팅랩의 운영 전반을 디지털 전환하는 통합 플랫폼입니다. 관리자 웹, 학생용 PWA, 내부 키오스크를 구축하고 실장이 직접 수행하던 학생 상담 프로세스를 AI 기반 워크플로우로 전환하고 있으며, 2026년 10월 마무리 예정입니다.",
+      tech: ["Next.js", "React", "Spring Boot", "PostgreSQL", "PWA", "AI Automation"],
+      links: [],
+      features: [
+        "관리자 웹·학생용 PWA·내부 키오스크 통합 구축",
+        "학생·출결·좌석·학습 리포트 등 학원 운영 시스템 개발",
+        "입시 상담 프로세스의 AI 기반 전환",
+        "운영 요구사항 정리부터 설계·개발·배포까지 수행",
+      ],
+      images: [{ src: "/images/thatsone/kiosk-landing.png", alt: "댓츠원 내부 키오스크" }],
+    },
+    {
+      id: 19,
+      slug: "hufs-ai-chatbot",
+      tag: "외부 프로젝트 · AI / RAG",
+      title: "한국외대 AI 학사 챗봇",
+      period: "2026.08 - 현재 (2026.09 PoC)",
+      description:
+        "한국외국어대학교 전자규정집과 학사 데이터를 기반으로 정확한 답변과 근거 조항을 제공하는 AI 챗봇입니다. 오픈 2주차에 DAU 약 80명, 하루 질문 약 300건을 기록하며 교육 AX PoC를 진행하고 있습니다. (2026년 9월 기준)",
+      tech: ["React", "TypeScript", "FastAPI", "RAG", "LLM", "Vector Search"],
+      links: [{ label: "서비스", url: "https://chat.hufs.ac.kr/" }],
+      features: [
+        "오픈 2주차 DAU 약 80명·하루 질문 약 300건 (2026년 9월 기준)",
+        "검증된 Q&A DB와 구조적 RAG를 결합한 하이브리드 답변",
+        "답변별 학칙·규정 근거 조항 인용",
+        "낮은 신뢰도 답변의 직원 검토·승인 워크플로우",
+        "질의 정규화와 회귀 테스트 기반 품질 검증",
+      ],
+      images: [{ src: "/images/hufs-chatbot/og-image.png", alt: "한국외대 학사 안내 챗봇" }],
+    },
+    {
+      id: 20,
+      slug: "pinta-ai-ax",
+      tag: "외부 프로젝트 · AX / Automation",
+      title: "PintaAI 내부 운영 AX",
+      period: "2026.07 - 현재",
+      description:
+        "AI 에이전트와 MCP의 실행을 관찰·통제하는 미국 법인 보안 기업 PintaAI의 내부 재무·운영 프로세스를 AX로 전환하는 프로젝트입니다. 반복 업무를 자동화하고 실제 운영 환경에 이관했습니다.",
+      tech: ["TypeScript", "Node.js", "PostgreSQL", "Playwright", "GCP", "LLM"],
+      links: [{ label: "Website", url: "https://pinta.sh/" }],
+      features: [
+        "부가세 증빙 수집·분류·회신 워크플로우 자동화",
+        "지원사업 서류 생성·검증 프로세스 구축",
+        "영업·투자 CRM 및 운영 리더보드 자동화",
+        "로컬 업무 도구의 클라우드 운영 환경 전환",
+      ],
+    },
     {
       id: 3,
       slug: "yunit",
@@ -678,6 +753,81 @@ export const otherProjectsData: LocalizedData<Project[]> = {
     },
   ],
   en: [
+    {
+      id: 17,
+      slug: "heyring-ai",
+      tag: "Product Engineering",
+      title: "Heyring AI",
+      period: "2026.07 - Present",
+      description:
+        "Hypernova's AI language-learning service. Immediately after joining as a Product Engineer, I introduced mobile CI/CD and cut build time from 21 minutes to 6 minutes (about 71%), shipped Japanese learning and drag-to-save vocabulary features, and designed infrastructure improvements for scheduled calls.",
+      tech: ["Flutter", "Dart", "CI/CD", "Queue", "Infrastructure", "Product Engineering"],
+      links: [
+        { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hypernovacorp.navatar_android" },
+        { label: "App Store", url: "https://apps.apple.com/us/app/id6511246156" },
+      ],
+      features: [
+        "Introduced and optimized mobile CI/CD: build time from 21 to 6 minutes (about 71% faster)",
+        "Expanded the English-only experience to Japanese learning",
+        "Built drag-to-save and study flows for words and expressions",
+        "Designed scheduler, decision/dispatcher, queue, and delivery-worker separation for scheduled calls",
+        "Product engineering across Flutter, backend, and infrastructure",
+      ],
+    },
+    {
+      id: 18,
+      slug: "thats-one",
+      tag: "Client Project · DX / Full-Stack",
+      title: "That's One - Admissions Consulting DX Platform",
+      period: "2026.05 - 2026.10",
+      description:
+        "An integrated platform digitizing operations for an admissions consulting lab in Daechi-dong. The internal admin web, student PWA, kiosk, and AI-assisted counseling workflow are in development, with completion planned for October 2026.",
+      tech: ["Next.js", "React", "Spring Boot", "PostgreSQL", "PWA", "AI Automation"],
+      links: [],
+      features: [
+        "Integrated admin web, student PWA, and internal kiosk",
+        "Student, attendance, seating, and learning report operations",
+        "AI-assisted transformation of the admissions counseling process",
+        "End-to-end delivery from requirements and architecture to deployment",
+      ],
+      images: [{ src: "/images/thatsone/kiosk-landing.png", alt: "That's One internal kiosk" }],
+    },
+    {
+      id: 19,
+      slug: "hufs-ai-chatbot",
+      tag: "Client Project · AI / RAG",
+      title: "HUFS AI Academic Chatbot",
+      period: "2026.08 - Present (PoC since 2026.09)",
+      description:
+        "An AI chatbot that provides accurate, citation-grounded answers from HUFS regulations and academic data. In its second week after launch, it reached about 80 DAU and 300 questions per day while the education AX PoC continued. (As of September 2026)",
+      tech: ["React", "TypeScript", "FastAPI", "RAG", "LLM", "Vector Search"],
+      links: [{ label: "Service", url: "https://chat.hufs.ac.kr/" }],
+      features: [
+        "About 80 DAU and 300 questions per day in its second week (as of September 2026)",
+        "Hybrid answers combining a verified Q&A database with structural RAG",
+        "Regulation and policy citations attached to each answer",
+        "Staff review and approval workflow for low-confidence answers",
+        "Quality validation through query normalization and regression tests",
+      ],
+      images: [{ src: "/images/hufs-chatbot/og-image.png", alt: "HUFS academic information chatbot" }],
+    },
+    {
+      id: 20,
+      slug: "pinta-ai-ax",
+      tag: "Client Project · AX / Automation",
+      title: "PintaAI Internal Operations AX",
+      period: "2026.07 - Present",
+      description:
+        "An internal AX initiative for PintaAI, a U.S.-incorporated security company that observes and controls AI agent and MCP execution. Automated recurring finance and operations workflows and transitioned them into production use.",
+      tech: ["TypeScript", "Node.js", "PostgreSQL", "Playwright", "GCP", "LLM"],
+      links: [{ label: "Website", url: "https://pinta.sh/" }],
+      features: [
+        "VAT evidence collection, classification, and response automation",
+        "Grant document generation and validation workflow",
+        "Sales and investor CRM and operations leaderboard automation",
+        "Migration from local workflow tools to a cloud operating environment",
+      ],
+    },
     {
       id: 3,
       slug: "yunit",
@@ -955,7 +1105,9 @@ export const otherProjectsData: LocalizedData<Project[]> = {
 
 // 모든 프로젝트 통합 (slug로 조회용)
 export function getAllProjects(language: "ko" | "en"): Project[] {
-  return [...majorProjectsData[language], ...otherProjectsData[language]];
+  const recentProjects = otherProjectsData[language].filter((project) => project.id >= 17);
+  const previousProjects = otherProjectsData[language].filter((project) => project.id < 17);
+  return [...recentProjects, ...majorProjectsData[language], ...previousProjects];
 }
 
 export function getProjectBySlug(slug: string, language: "ko" | "en"): Project | undefined {
@@ -985,7 +1137,7 @@ export const projectSectionTexts: LocalizedData<{
   ko: {
     label: "Projects",
     title: "주요 프로젝트",
-    description: "4년 이상 지속적으로 개발/유지보수 중인 핵심 프로젝트",
+    description: "모바일 제품부터 AI/AX·인프라까지 직접 설계하고 구현한 프로젝트",
     otherProjects: "기타 프로젝트",
     productDesign: "제품 디자인",
     appDesign: "앱 디자인",
@@ -1004,7 +1156,7 @@ export const projectSectionTexts: LocalizedData<{
   en: {
     label: "Projects",
     title: "Key Projects",
-    description: "Core projects continuously developed and maintained for 4+ years",
+    description: "Products I designed and built across mobile, AI/AX, and infrastructure",
     otherProjects: "Other Projects",
     productDesign: "Product Design",
     appDesign: "App Design",
